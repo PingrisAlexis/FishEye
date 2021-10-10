@@ -1,0 +1,126 @@
+/*RESET*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*GENERAL*/
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+li {
+  list-style: none;
+}
+
+/*VARIABLES*/
+body {
+  --color-primary: #901C1C;
+  --color-secondary: #D3573C;
+  --color-tertiary: #525252;
+  --background-secondary: #FAFAFA;
+}
+
+/*GENERAL*/
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+li {
+  list-style: none;
+}
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 3rem 2rem;
+}
+header img {
+  width: 5rem;
+}
+header nav {
+  width: 100vw;
+  display: flex;
+}
+header ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
+}
+header li {
+  flex-wrap: wrap;
+  font-size: 1.6rem;
+  border: 0.1rem solid #C4C4C4;
+  border-radius: 2rem;
+  padding: 0.5rem;
+  margin: 0.3rem 0.3rem;
+  cursor: pointer;
+  font-weight: bold;
+  color: var(--color-primary);
+}
+header li:hover {
+  background: var(--color-primary);
+  color: #FFFFFF;
+}
+
+main h1 {
+  display: block;
+  font-size: 2rem;
+  color: var(--color-primary);
+  position: absolute;
+  top: 3.8rem;
+  right: 3rem;
+}
+main .photographer-portrait {
+  height: 5rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/*MEDIAS QUERIES*/
+@media screen and (max-width: 1300px) {
+  header ul {
+    margin-top: 2rem;
+  }
+}
+@media screen and (min-width: 1300px) {
+  header img {
+    height: 5rem;
+  }
+  header ul {
+    position: relative;
+    bottom: 3.7rem;
+  }
+
+  main h1 {
+    font-size: 3rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  header img {
+    margin-left: 15rem;
+  }
+
+  main h1 {
+    margin-right: 15rem;
+  }
+
+  header ul {
+    margin: auto;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

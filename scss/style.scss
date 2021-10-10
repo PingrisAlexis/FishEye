@@ -1,0 +1,109 @@
+@import "reset";
+@import "base";
+@import "variables";
+@import "base";
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 3rem 2rem;
+img {
+  width: 5rem;
+}
+  nav {
+    width: 100vw;
+    display: flex;
+  }
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    //margin-top: 2rem;
+    margin: auto;
+  }
+  li {
+    flex-wrap: wrap;
+    font-size: 1.6rem;
+    border: 0.1rem solid #C4C4C4;
+    border-radius: 2rem;
+    padding: 0.5rem;
+    margin: 0.3rem 0.3rem;
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--color-primary);
+  }
+  li:hover {
+    background: var(--color-primary);
+    color: #FFFFFF;
+  }
+}
+
+main {
+  h1 {
+    display: block;
+    font-size: 2rem;
+    color: var(--color-primary);
+    position: absolute;
+    top: 3.8rem;
+    right: 3rem;
+  }
+  .photographer-portrait {
+    height: 5rem;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+
+
+/*MEDIAS QUERIES*/
+@media screen and (max-width:1300px) {
+  header {
+    ul {
+      margin-top: 2rem;
+    }
+  }
+
+}
+@media screen and (min-width:1300px) {
+  header {
+    img {
+      height: 5rem;
+    }
+    ul {
+      position: relative;
+      bottom: 3.7rem;
+    }
+  }
+  main {
+    h1 {
+      font-size: 3rem;
+    }
+  }
+}
+@media screen and (min-width:1500px) {
+  header {
+    img {
+      margin-left: 15rem;
+    }
+  }
+  main {
+    h1 {
+      margin-right: 15rem;
+    }
+  }
+  header {
+    ul {
+      margin: auto;
+    }
+  }
+}

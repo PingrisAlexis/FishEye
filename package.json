@@ -1,0 +1,26 @@
+{
+  "name": "pingrisalexis_06_05102021",
+  "version": "1.0.0",
+  "description": "PingrisAlexis_06_05102021",
+  "main": "index.js",
+  "dependencies": {
+    "sass": "^1.42.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "node-sass -w scss -o css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PingrisAlexis/PingrisAlexis_06_05102021.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PingrisAlexis/PingrisAlexis_06_05102021/issues"
+  },
+  "homepage": "https://github.com/PingrisAlexis/PingrisAlexis_06_05102021#readme"
+}
