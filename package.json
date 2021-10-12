@@ -2,7 +2,7 @@
   "name": "pingrisalexis_06_05102021",
   "version": "1.0.0",
   "description": "PingrisAlexis_06_05102021",
-  "main": "index.js",
+  "main": "js/filters.js",
   "dependencies": {
     "sass": "^1.42.1"
   },
