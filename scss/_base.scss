@@ -5,6 +5,50 @@ html {
   overflow-x: hidden;
 }
 
+a {
+  text-decoration: none; /* no underline */
+}
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  justify-content: center;
+
+}
+
 li {
+  flex-wrap: wrap;
   list-style: none;
+  font-size: 1.6rem;
+  border: 0.1rem solid var(--color-fourth);
+  border-radius: 2rem;
+  padding: 0.5rem;
+  margin: 0.3rem 0.3rem;
+  cursor: pointer;
+  font-weight: bold;
+  color: var(--color-primary);
+}
+
+li:hover{
+  background: var(--color-primary);
+  color: #FFFFFF;
+}
+
+.active {
+  background: var(--color-primary);
+  color: #FFFFFF;
+}
+
+.inactive {
+  color: var(--color-primary);
+  background: #FFFFFF;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: initial;
 }
