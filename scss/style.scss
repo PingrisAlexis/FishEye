@@ -2,7 +2,13 @@
 @import "base";
 @import "variables";
 @import "base";
+[data-toggle='on'] {
+  display:block;
+}
 
+[data-toggle='off'] {
+  display:none;
+}
 header {
   display: flex;
   flex-wrap: wrap;
@@ -14,7 +20,13 @@ header {
     width: 100vw;
     display: flex;
   }
-
+  li {
+    cursor: pointer;
+  }
+  li:hover{
+    background: var(--color-primary);
+    color: #FFFFFF;
+  }
 }
 
 main {
@@ -52,13 +64,13 @@ main {
     width: 30rem;
     border-radius: 50%;
     object-fit: cover;
+    box-shadow: var(--img-shadow)
   }
   h2 {
     font-size: 4rem !important;
     color: var(--color-secondary)!important;
     font-weight: 500!important;
   }
-
 }
 
 .sr-only {
@@ -71,9 +83,6 @@ main {
   clip: rect(0,0,0,0);
   border: 0;
 }
-/*  Needed for filters */
-
-
 
 /*MEDIAS QUERIES*/
 @media screen and (max-width:1300px) {
@@ -109,6 +118,7 @@ main {
   header {
     img {
       margin-left: 20rem;
+
     }
   }
   main {

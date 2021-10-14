@@ -25,24 +25,8 @@ li {
   border-radius: 2rem;
   padding: 0.5rem;
   margin: 0.3rem 0.3rem;
-  cursor: pointer;
   font-weight: bold;
   color: var(--color-primary);
-}
-
-li:hover{
-  background: var(--color-primary);
-  color: #FFFFFF;
-}
-
-.active {
-  background: var(--color-primary);
-  color: #FFFFFF;
-}
-
-.inactive {
-  color: var(--color-primary);
-  background: #FFFFFF;
 }
 
 .hide {
