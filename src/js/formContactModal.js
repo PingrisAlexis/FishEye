@@ -1,6 +1,6 @@
 //CONTACT
-const contactModal = document.querySelector(".bground");
-const btnCloseContactModal = document.querySelectorAll(".close");
+const contactModal = document.querySelector(".form-container");
+const btnCloseContactModal = document.querySelectorAll(".form-close");
 
 
 //LAUNCH CONTACT MODAL
