@@ -6,7 +6,7 @@ filters.forEach(filter => {
 
         let selectedFilter = filter.getAttribute("data-filter");
         let photographerCardsToHide = document.querySelectorAll(`.photographers-filter:not([data-filter='${selectedFilter}'])`);
-        let photographerCardsToShow = document.querySelectorAll(`[data-filter='${selectedFilter}']`);
+        let photographerCardsToShow = document.querySelectorAll(`[data-filter='${selectedFilter}'], [tag='${selectedFilter}']`);
 
         if (selectedFilter === "all") {
             photographerCardsToHide = [];
@@ -26,4 +26,3 @@ filters.forEach(filter => {
         });
     };
 });
-
