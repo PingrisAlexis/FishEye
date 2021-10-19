@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" type="image/png" href="../../assets/global/favicon-fisheye.png">
+    <link rel="stylesheet" href="../scss/style.css">
+    <title>FishEye</title>
+</head>
+<body>
+    <header class="photographer-page-header">
+
+    </header>
+    <div class="sort-by">
+        <span>Trier par </span>
+        <label for="sort-by">
+            <select name="sort-by" id="sort-by">
+                <option value="Popularité">Popularité</option>
+                <option value="Date">Date</option>
+                <option value="Titre">Titre</option>
+            </select>
+        </label>
+    </div>
+    <main class="photographer-page-main">
+        <div id="media-cards-container"></div>
+        <div id="lightbox-modal" class="lightbox-modal">
+            <span class="lightbox-close lightbox-cursor" onclick="closeModal()">&times;</span>
+            <div class="lightbox-modal-content">
+<!--                <div class="lightbox-modal-arrow">-->
+                    <a class="lightbox-prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="lightbox-next" onclick="plusSlides(1)">&#10095;</a>
+<!--                </div>-->
+            </div>
+
+
+
+        </div>
+        <div class="form-container">
+            <div class="form-content">
+                <span class="form-close"></span>
+                <div class="form-modal-body">
+                    <h2>Contactez-moi</h2>
+                    <form  name="contact" id="contact" action="index.html" method="post">
+                        <div class="formData">
+                            <label for="user-firstname">Prénom</label>
+                            <br>
+                            <input class="text-control" type="text" id="user-firstname" name="user-firstname" minlength="2" maxlength="20">
+                            <span class="info-form" id="info-firstname"></span>
+                            <br>
+                        </div>
+                        <div class="formData">
+                            <label for="user-lastname">Nom</label><br>
+                            <input class="text-control" type="text" id="user-lastname" name="user-lastname" minlength="2" maxlength="20">
+                            <span class="info-form" id="info-lastname"></span>
+                            <br>
+                        </div>
+                        <div class="formData">
+                            <label for="user-email">E-mail</label><br>
+                            <input class="text-control" type="email" id="user-email" name="user-email">
+                            <span class="info-form" id="info-email"></span>
+                            <br>
+                        </div>
+                        <div class="formData" >
+                            <label for="user-message">Votre message</label>
+                            <br>
+                            <textarea class="text-control" id="user-message" name="user-message" minlength="2"></textarea>
+                            <span class="info-form" id="info-message"></span>
+                        </div>
+                        <div class="form-submit">
+                            <label for="btn-form-submit"></label>
+                            <input class="btn-submit" type="submit" id="btn-form-submit" value="Envoyer">
+                            <span class="info-form" id="info-signup"></span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/photographerPageBuild.js" async></script>
+    <script src="../js/photographerCards.js" async></script>
+    <script src="../js/formContactModal.js" async></script>
+    <script src="../js/formContact.js" async></script>
+    <script src="../js/mediaCard.js" async></script>
+    <script src="../js/lightbox.js" async></script>
+</body>
+</html>
