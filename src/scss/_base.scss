@@ -29,10 +29,46 @@ li {
   color: var(--color-primary);
 }
 
+.photographer-city {
+  font-size: 2rem;
+  color: var(--color-primary);
+}
+
+.photographer-tagline {
+  font-size: 1.6rem;
+  color : var(--color-tertiary)
+
+}
+
+.photographer-price {
+  font-size: 1.6rem;
+  font-weight: lighter;
+  color : var(--color-fourth)
+
+}
+
+
+
 .hide {
   display: none;
 }
 
 .show {
   display: initial;
+}
+
+.active {
+  background: var(--color-primary);
+  color: #FFFFFF;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
 }

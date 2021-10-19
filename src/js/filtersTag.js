@@ -4,7 +4,7 @@ filters.forEach(filter => {
 
     filter.onclick = () => {
 
-        let selectedFilter = filter.getAttribute('data-filter');
+        let selectedFilter = filter.getAttribute("data-filter");
         let photographerCardsToHide = document.querySelectorAll(`.photographers-filter:not([data-filter='${selectedFilter}'])`);
         let photographerCardsToShow = document.querySelectorAll(`[data-filter='${selectedFilter}']`);
 
@@ -14,13 +14,15 @@ filters.forEach(filter => {
         }
 
         photographerCardsToHide.forEach(el => {
-            el.parentNode.parentNode.classList.add('hide');
-            el.parentNode.parentNode.classList.remove('show');
+            el.parentNode.parentNode.classList.add("hide");
+            el.parentNode.parentNode.classList.remove("show");
+            // el.classList.remove("active");
         });
 
         photographerCardsToShow.forEach(el => {
-            el.parentNode.parentNode.classList.remove('hide');
-            el.parentNode.parentNode.classList.add('show');
+            el.parentNode.parentNode.classList.remove("hide");
+            el.parentNode.parentNode.classList.add("show");
+            // el.classList.add("active");
         });
     };
 });

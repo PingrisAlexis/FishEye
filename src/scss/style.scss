@@ -2,19 +2,16 @@
 @import "base";
 @import "variables";
 @import "base";
-[data-toggle='on'] {
-  display:block;
-}
+@import "photographerPage";
+@import "mediasQueries";
 
-[data-toggle='off'] {
-  display:none;
-}
+
 header {
   display: flex;
   flex-wrap: wrap;
   padding: 3rem 2rem;
-  img {
-  height: 3rem;
+  .logo {
+  height: 4rem;
   }
   nav {
     width: 100vw;
@@ -47,17 +44,6 @@ main {
   article {
     margin: 3rem 15rem;
     text-align: center;
-    p:nth-child(2) {
-      font-size: 2rem;
-      color: var(--color-primary);
-    }
-    p:nth-child(3) {
-      font-size: 1.6rem;
-    }
-    p:nth-child(4) {
-      font-size: 1.6rem;
-      color : var(--color-fourth)
-    }
   }
   img {
     height: 30rem;
@@ -73,21 +59,12 @@ main {
   }
 }
 
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0,0,0,0);
-  border: 0;
-}
+
 
 /*MEDIAS QUERIES*/
 @media screen and (max-width:1300px) {
   header {
-    ul {
+    .home-header-taglist {
       margin-top: 2rem;
     }
   }
@@ -100,12 +77,11 @@ main {
 
 @media screen and (min-width:700px) {
   header {
-    img {
+    .logo {
       height: 6rem;
     }
     ul {
       position: relative;
-      //bottom: 0rem;
     }
   }
   main {
@@ -114,23 +90,23 @@ main {
     }
   }
 }
-@media screen and (min-width:1550px) {
-  header {
-    img {
-      margin-left: 20rem;
 
+@media screen and (min-width:1550px) {
+  .header {
+    ul {
+      margin: auto;
+      bottom: 5rem;
     }
+  }
+  header {
+    .logo {
+      margin-left: 20rem;
+    }
+
   }
   main {
     h1 {
       margin-right: 15rem;
-    }
-  }
-  header {
-    ul {
-      margin: auto;
-      bottom: 5rem;
-
     }
   }
 }
