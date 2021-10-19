@@ -3,7 +3,8 @@
 @import "variables";
 @import "base";
 @import "photographerPage";
-@import "mediasQueries";
+@import "formContact";
+@import "lightbox";
 
 
 header {
@@ -17,16 +18,21 @@ header {
     width: 100vw;
     display: flex;
   }
+
+}
+.home-header-taglist {
   li {
+    background: linear-gradient(to left, white 50%, var(--color-primary) 50%) right;
+    background-size: 200%;
+    transition: 0.6s ease-out;
     cursor: pointer;
   }
   li:hover{
-    background: var(--color-primary);
     color: #FFFFFF;
+    background-position: left;
   }
 }
-
-main {
+.home-main-container {
   h1 {
     display: block;
     font-size: 2rem;
@@ -45,27 +51,27 @@ main {
     margin: 3rem 15rem;
     text-align: center;
   }
-  img {
-    height: 30rem;
-    width: 30rem;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: var(--img-shadow)
-  }
+
   h2 {
     font-size: 4rem !important;
     color: var(--color-secondary)!important;
     font-weight: 500!important;
   }
 }
-
+.photographer-portrait {
+  height: 30rem;
+  width: 30rem;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: var(--img-shadow)
+}
 
 
 /*MEDIAS QUERIES*/
 @media screen and (max-width:1300px) {
   header {
     .home-header-taglist {
-      margin-top: 2rem;
+      margin-bottom: 5rem;
     }
   }
   main {
@@ -92,17 +98,17 @@ main {
 }
 
 @media screen and (min-width:1550px) {
-  .header {
+  .home-header-container {
     ul {
       margin: auto;
       bottom: 5rem;
     }
+
   }
   header {
-    .logo {
-      margin-left: 20rem;
+    .logo{
+      margin-left: 19rem;
     }
-
   }
   main {
     h1 {

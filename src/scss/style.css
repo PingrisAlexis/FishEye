@@ -61,7 +61,6 @@ li {
 
 .active {
   background: var(--color-primary);
-  color: #FFFFFF;
 }
 
 .sr-only {
@@ -78,7 +77,7 @@ li {
 /*VARIABLES*/
 body {
   --color-primary: #901C1C;
-  --color-secondary: #D3573C;
+  --color-secondary: #db8876;
   --color-tertiary: #525252;
   --color-fourth: #C4C4C4;
   --background-secondary: #FAFAFA;
@@ -141,7 +140,6 @@ li {
 
 .active {
   background: var(--color-primary);
-  color: #FFFFFF;
 }
 
 .sr-only {
@@ -155,9 +153,6 @@ li {
   border: 0;
 }
 
-.photographer-page-header {
-  width: 100vw;
-}
 .photographer-page-header nav {
   margin-bottom: 5rem;
 }
@@ -187,11 +182,20 @@ li {
 .photographer-details-card ul {
   justify-content: flex-start;
 }
+.photographer-details-card li {
+  background: #FFFFFF;
+}
+
+.btn-header-photographer-page-contact {
+  position: relative;
+  bottom: 6rem;
+}
 
 .btn-bottom-photographer-page-contact {
-  z-index: 1;
   position: fixed;
   bottom: 5rem;
+  left: 0.1rem;
+  margin: auto;
 }
 
 .btn-bottom-photographer-page-contact,
@@ -202,9 +206,10 @@ li {
 }
 
 .btn-bottom-photographer-page-contact input,
-.btn-header-photographer-page-contact input {
-  width: 18rem;
+.btn-header-photographer-page-contact input,
+.form-submit input {
   height: 4rem;
+  width: 18rem;
   font-size: 2rem;
   background: var(--color-primary);
   color: #FFFFFF;
@@ -213,13 +218,40 @@ li {
   cursor: pointer;
 }
 .btn-bottom-photographer-page-contact input:hover,
-.btn-header-photographer-page-contact input:hover {
+.btn-header-photographer-page-contact input:hover,
+.form-submit input:hover {
   background: var(--color-secondary);
   color: #333333;
 }
 
+.photographer-page-main {
+  display: flex;
+  justify-content: center;
+  width: 80vw;
+  margin: auto;
+}
+
+#media-cards-container {
+  justify-self: center;
+  align-items: baseline;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+#media-cards-container figure {
+  width: 35rem;
+  margin: 3rem;
+}
+#media-cards-container img {
+  width: 100%;
+  height: 30rem;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
 /*MEDIAS QUERIES*/
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 550px) {
   .photographer-details-card {
     padding: 0 4rem;
     margin: auto;
@@ -229,14 +261,20 @@ li {
     align-items: center;
     justify-content: space-between;
   }
+
+  .btn-bottom-photographer-page-contact input,
+.btn-header-photographer-page-contact input,
+.form-submit input {
+    height: 5rem;
+  }
 }
-@media screen and (min-width: 1100px) {
+@media screen and (min-width: 1300px) {
   .btn-bottom-photographer-page-contact {
     display: none;
   }
 
   .btn-header-photographer-page-contact {
-    margin-right: 7rem;
+    margin-right: 13rem;
   }
 
   .photographer-datas {
@@ -251,11 +289,218 @@ li {
     width: 20rem;
   }
 }
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1300px) {
   .btn-header-photographer-page-contact {
     display: none;
   }
 }
+.form-modal-body {
+  margin: 3rem;
+  height: 75vh;
+}
+.form-modal-body h2 {
+  font-size: 4rem;
+  color: #333333;
+}
+.form-modal-body label {
+  font-family: var(--font-default);
+  font-size: 2.5rem;
+  font-weight: normal;
+  display: inline-block;
+  margin-top: 1rem;
+  color: #333333;
+  text-align: left;
+}
+.form-modal-body input {
+  height: 4rem;
+  border: 0.8px solid #ccc;
+  outline: none;
+}
+
+.form-submit {
+  margin-top: 4rem;
+}
+
+.info-form {
+  font-size: 2rem;
+}
+
+.text-control {
+  margin: 0;
+  padding: 8px;
+  width: 100%;
+  font-size: 2rem;
+}
+
+.formData {
+  margin-top: 1rem;
+}
+
+textarea {
+  height: 15rem;
+  font-family: "arial", Times, serif;
+}
+
+.form-container {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background: rgba(0, 0, 0, 0.3);
+  padding-top: 10vh;
+}
+
+.form-content {
+  position: relative;
+  top: -6rem;
+  margin: 5% auto;
+  width: 100%;
+  max-width: 50rem;
+  animation-name: modalopen;
+  animation-duration: 0.6s;
+  background: var(--color-secondary);
+  overflow: hidden;
+  color: #fff;
+  bottom: 3rem;
+  box-shadow: var(--img-shadow);
+}
+
+.form-close {
+  position: absolute;
+  right: 3rem;
+  top: 3rem;
+  width: 32px;
+  height: 32px;
+  opacity: 1;
+  cursor: pointer;
+  animation-name: modalclose;
+  animation-duration: 0.6s;
+}
+
+.form-close:before,
+.form-close:after {
+  position: absolute;
+  left: 15px;
+  content: " ";
+  height: 33px;
+  width: 3px;
+  background-color: #fff;
+}
+
+.form-close:before {
+  transform: rotate(45deg);
+}
+
+.form-close:after {
+  transform: rotate(-45deg);
+}
+
+@media screen and (max-width: 500px) {
+  .form-modal-body {
+    height: 100vh;
+  }
+
+  .form-content {
+    position: relative;
+    top: -12rem;
+  }
+
+  .form-submit {
+    display: flex;
+    justify-content: center;
+  }
+
+  form {
+    margin-top: 10rem;
+  }
+}
+@keyframes modalopen {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+    visibility: visible;
+  }
+}
+@keyframes modalclose {
+  0% {
+    transform: scale(1);
+    visibility: visible;
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+.lightbox-modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+}
+
+/* The Close Button */
+.lightbox-close {
+  color: var(--color-primary);
+  position: absolute;
+  top: 1rem;
+  right: 5%;
+  font-size: 6rem;
+  margin: 0 2rem;
+  font-weight: 900;
+}
+
+.lightbox-close:hover,
+.lightbox-close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.lightbox-slides {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.lightbox-slides img {
+  object-fit: contain;
+  width: 70%;
+  max-height: 80vh;
+}
+
+.lightbox-prev,
+.lightbox-next {
+  cursor: pointer;
+  position: absolute;
+  top: 46.5%;
+  width: auto;
+  margin: 0 2rem;
+  color: var(--color-primary);
+  font-weight: 400;
+  font-size: 5rem;
+  transition: 0.6s ease;
+}
+
+.lightbox-prev {
+  left: 4.5%;
+}
+
+.lightbox-next {
+  right: 5%;
+  border-radius: 3px 0 0 3px;
+}
+
 header {
   display: flex;
   flex-wrap: wrap;
@@ -268,15 +513,19 @@ header nav {
   width: 100vw;
   display: flex;
 }
-header li {
+
+.home-header-taglist li {
+  background: linear-gradient(to left, white 50%, var(--color-primary) 50%) right;
+  background-size: 200%;
+  transition: 0.6s ease-out;
   cursor: pointer;
 }
-header li:hover {
-  background: var(--color-primary);
+.home-header-taglist li:hover {
   color: #FFFFFF;
+  background-position: left;
 }
 
-main h1 {
+.home-main-container h1 {
   display: block;
   font-size: 2rem;
   color: var(--color-primary);
@@ -285,32 +534,33 @@ main h1 {
   right: 3rem;
   font-weight: 500;
 }
-main div {
+.home-main-container div {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
-main article {
+.home-main-container article {
   margin: 3rem 15rem;
   text-align: center;
 }
-main img {
+.home-main-container h2 {
+  font-size: 4rem !important;
+  color: var(--color-secondary) !important;
+  font-weight: 500 !important;
+}
+
+.photographer-portrait {
   height: 30rem;
   width: 30rem;
   border-radius: 50%;
   object-fit: cover;
   box-shadow: var(--img-shadow);
 }
-main h2 {
-  font-size: 4rem !important;
-  color: var(--color-secondary) !important;
-  font-weight: 500 !important;
-}
 
 /*MEDIAS QUERIES*/
 @media screen and (max-width: 1300px) {
   header .home-header-taglist {
-    margin-top: 2rem;
+    margin-bottom: 5rem;
   }
 
   main article {
@@ -330,13 +580,13 @@ main h2 {
   }
 }
 @media screen and (min-width: 1550px) {
-  .header ul {
+  .home-header-container ul {
     margin: auto;
     bottom: 5rem;
   }
 
   header .logo {
-    margin-left: 20rem;
+    margin-left: 19rem;
   }
 
   main h1 {

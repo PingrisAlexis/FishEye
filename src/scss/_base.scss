@@ -1,5 +1,4 @@
 /*GENERAL*/
-
 html {
   font-size: 62.5%;
   overflow-x: hidden;
@@ -47,8 +46,6 @@ li {
 
 }
 
-
-
 .hide {
   display: none;
 }
@@ -59,7 +56,7 @@ li {
 
 .active {
   background: var(--color-primary);
-  color: #FFFFFF;
+  //color: #FFFFFF;
 }
 
 .sr-only {
@@ -72,3 +69,4 @@ li {
   clip: rect(0,0,0,0);
   border: 0;
 }
+
