@@ -1,3 +1,4 @@
+
 class PhotographerCard {
 
 	constructor (photographer) {
@@ -6,8 +7,8 @@ class PhotographerCard {
 
 	getPhotographerHomeCard () {
 		return `<article>
-					<a href="html/photographer-page.html?id=${this.photographer.id}">
-						<img class="photographer-portrait" src="assets/media/PhotographersPortraits/${this.photographer.portrait}" alt="Photographer Portrait">
+					<a href="src/pages/photographer-page.html?id=${this.photographer.id}">
+						<img class="photographer-portrait" src="assets/media/photographers-portraits/${this.photographer.portrait}" alt="Photographer Portrait">
 						<h2>${this.photographer.name}</h2>
 					</a>
 					<p class="photographer-city">${this.photographer.city}, ${this.photographer.country}</pphotographer-city>
@@ -22,41 +23,36 @@ class PhotographerCard {
 	}
 
 	getPhotographerPageCard () {
-		return `<header class="photographer-page-header">
+		return `
 					<nav>
-        				<a href="../index.html">
-            				<img class="logo" src="../assets/global/logo-fisheye.png" alt="Fisheye Home page">
+        				<a href="../../index.html">
+            				<img class="logo logo-photographer" src="../../assets/global/logo-fisheye.png" alt="Fisheye Home page">
         				</a>
         			</nav>
         			<article class="photographer-details-card">
         				<div>
-        			        <img class="photographer-portrait" src="../assets/media/PhotographersPortraits/${this.photographer.portrait}" alt="Photographer Portrait">
+        			        <img class="photographer-portrait" src="../../assets/media/photographers-portraits/${this.photographer.portrait}" alt="Photographer Portrait">
 						</div>
 						<div class="btn-header-photographer-page-contact">
-    						<label for="contact"></label>
-    						<input type="submit" name="contact" id="contact" value="Contactez-moi">
-						</div>
+        					<label for="contact"></label>
+        					<input class="modal-btn" type="submit" name="contact" value="Contactez-moi">
+    					</div>
+    					<div class="btn-bottom-photographer-page-contact">
+        					<label for="contact"></label>
+        					<input id="btn-bottom-form-submit" class="modal-btn" type="submit" name="contact" value="Contactez-moi">
+    					</div>		
 						<div class="photographer-datas">
 							<h1>${this.photographer.name}</h1>
         					<p class="photographer-city">${this.photographer.city}, ${this.photographer.country}</p>
 							<p class="photographer-tagline">${this.photographer.tagline}</p>
 							<ul>${this.photographer.tags.map(tag =>
-								`<li class="photographers-filter"  data-filter="${tag}">#${tag}
+								`<li class="photographers-filter "  data-filter="${tag}">#${tag}
 									<span class="sr-only">Filtre les artistes selon la catégorie ${tag}</span>
 								</li>`).join(' ')}
 								<li aria-label="tag all" class="photographers-filter" data-filter="all">#all <span class="sr-only">Filtre qui affiche tout les artistes</span></li>
 							</ul> 
 						</div>
-						</article>
-    			</header>
-    			<div class="btn-bottom-photographer-page-contact">
-    				<label for="contact"></label>
-    				<input type="submit" name="contact" id="contact" value="Contactez-moi">
-				</div>
-			<main></main>
-`
-
+					</article>
+		`
 	}
 }
-
-
