@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
     <link rel="shortcut icon" type="image/png" href="../../assets/global/favicon-fisheye.png">
     <link rel="stylesheet" href="../scss/style.css">
     <title>FishEye</title>
 </head>
-<body>
-    <header class="photographer-page-header">
+<body >
+    <header class="photographer-page-header"></header>
 
-    </header>
     <div class="sort-by">
         <span>Trier par </span>
         <label for="sort-by">
@@ -27,14 +27,9 @@
         <div id="lightbox-modal" class="lightbox-modal">
             <span class="lightbox-close lightbox-cursor" onclick="closeModal()">&times;</span>
             <div class="lightbox-modal-content">
-<!--                <div class="lightbox-modal-arrow">-->
                     <a class="lightbox-prev" onclick="plusSlides(-1)">&#10094;</a>
                     <a class="lightbox-next" onclick="plusSlides(1)">&#10095;</a>
-<!--                </div>-->
             </div>
-
-
-
         </div>
         <div class="form-container">
             <div class="form-content">
@@ -76,13 +71,14 @@
                 </div>
             </div>
         </div>
+
     </main>
 
     <script src="../js/photographerPageBuild.js" async></script>
-    <script src="../js/photographerCards.js" async></script>
+    <script src="../js/photographerCard.js" async></script>
     <script src="../js/formContactModal.js" async></script>
-    <script src="../js/formContact.js" async></script>
     <script src="../js/mediaCard.js" async></script>
-    <script src="../js/lightbox.js" async></script>
+    <script src="../js/lightboxModal.js" async></script>
+    <script src="../js/likes.js" async></script>
 </body>
 </html>
