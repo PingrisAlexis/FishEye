@@ -250,6 +250,39 @@ li {
   cursor: pointer;
 }
 
+.photographer-pictures-container figcaption {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1rem;
+  font-size: 2rem;
+  color: var(--color-primary);
+  justify-content: space-between;
+  font-weight: lighter;
+}
+.photographer-pictures-container button {
+  width: 3rem;
+  height: 3rem;
+}
+.photographer-pictures-container i {
+  cursor: pointer;
+  color: var(--color-primary);
+  z-index: 0;
+}
+
+.photographer-info {
+  width: 25rem;
+  height: 5rem;
+  position: fixed;
+  background: var(--color-secondary);
+  bottom: 0;
+  right: 10rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 2rem;
+  border-radius: 1rem 1rem 0 0;
+}
+
 /*MEDIAS QUERIES*/
 @media screen and (min-width: 550px) {
   .photographer-details-card {

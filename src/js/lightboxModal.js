@@ -1,3 +1,8 @@
+let slideIndex =0;
+console.log(slideIndex)
+// let selectedMedia = document.getAttribute("data-filter");
+// console.log(selectedMedia)
+
 // Open the Modal
 function openModal() {
     document.getElementById("lightbox-modal").style.display = "flex";
@@ -8,7 +13,6 @@ function closeModal() {
     document.getElementById("lightbox-modal").style.display = "none";
 }
 
-let slideIndex = 1;
 showSlides(slideIndex);
 
 // Next/previous controls
@@ -24,9 +28,13 @@ function currentSlide(n) {
 function showSlides(n) {
     let i;
     const slides = document.getElementsByClassName("lightbox-slides");
-    if (n > slides.length) {slideIndex = 1}
-    console.log(slideIndex)
-    if (n < 1) {slideIndex = slides.length}
+    if (n > slides.length) {
+        slideIndex = 1
+    }
+
+    if (n < 1) {
+        slideIndex = slides.length
+    }
     for (i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
     }

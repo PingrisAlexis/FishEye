@@ -7,21 +7,22 @@ class MediaCard {
     getMediaCard () {
         return `    
 				    <figure class="photographer-pictures-container">
-                        <img  class="hover-shadow-preview"  onclick="openModal();currentSlide(slideIndex)" src="../../assets/media/photographers-pictures/${this.media.photographerId}/${this.media.image}" alt="Media: ${this.media.title}."/>
+                        <img class="photographer-pictures-img" onclick="openModal();currentSlide(slideIndex)" data-id="${this.media.id}" src="../../assets/media/photographers-pictures/${this.media.photographerId}/${this.media.image}" alt="Media: ${this.media.title}."/>
                         <figcaption>
-                            <h3 class="picturesTitles">${this.media.title}</h3>
-                            <i class="fas fa-star"></i>
+                            <h3 class="photographer-pictures-title">${this.media.title}</h3>
+                            <div class="photographer-pictures-likes-container">
+                                  <span class="photographer-pictures-likes-amount">${this.media.likes}</span>
+                                  <i data-id="${this.media.id}" class="far fa-heart like-btn"></i>
+                           </div>
                         </figcaption>
                     </figure>
-
               `
     }
     getMediaLightbox() {
         return `    
                      <div class="lightbox-slides">
-                       <img  class="lightbox-img" onclick="openModal(slideIndex)" src="../../assets/media/photographers-pictures/${this.media.photographerId}/${this.media.image}" alt="Photograpie ."/>
+                       <img  class="lightbox-img" onclick="openModal(${this.media.id})" src="../../assets/media/photographers-pictures/${this.media.photographerId}/${this.media.image}" alt="Photograpie ."/>
                      </div>
               `
     }
-
 }

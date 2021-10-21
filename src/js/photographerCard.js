@@ -46,13 +46,21 @@ class PhotographerCard {
         					<p class="photographer-city">${this.photographer.city}, ${this.photographer.country}</p>
 							<p class="photographer-tagline">${this.photographer.tagline}</p>
 							<ul>${this.photographer.tags.map(tag =>
-								`<li class="photographers-filter "  data-filter="${tag}">#${tag}
+								`<li class="photographers-filter" data-filter="${tag}">#${tag}
 									<span class="sr-only">Filtre les artistes selon la catégorie ${tag}</span>
 								</li>`).join(' ')}
 								<li aria-label="tag all" class="photographers-filter" data-filter="all">#all <span class="sr-only">Filtre qui affiche tout les artistes</span></li>
 							</ul> 
 						</div>
 					</article>
+					<aside>
+                        <div class="photographer-info">
+                        <span id="photographer-info-total-likes"></span>
+                        	<i class="fas fa-heart"></i>
+                        
+                        	<span >${this.photographer.price}€ / jour</span>
+                        </div>
+                    </aside>
 		`
 	}
 }
