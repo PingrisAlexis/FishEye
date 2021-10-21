@@ -5,8 +5,9 @@ filters.forEach(filter => {
     filter.onclick = () => {
 
         let selectedFilter = filter.getAttribute("data-filter");
+        console.log(selectedFilter)
         let photographerCardsToHide = document.querySelectorAll(`.photographers-filter:not([data-filter='${selectedFilter}'])`);
-        let photographerCardsToShow = document.querySelectorAll(`[data-filter='${selectedFilter}'], [tag='${selectedFilter}']`);
+        let photographerCardsToShow = document.querySelectorAll(`[data-filter='${selectedFilter}']`);
 
         if (selectedFilter === "all") {
             photographerCardsToHide = [];
