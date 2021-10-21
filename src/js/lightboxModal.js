@@ -8,7 +8,7 @@ function closeModal() {
     document.getElementById("lightbox-modal").style.display = "none";
 }
 
-let slideIndex = 1;
+let slideIndex = [];
 showSlides(slideIndex);
 
 // Next/previous controls
