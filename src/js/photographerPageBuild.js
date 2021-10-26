@@ -9,18 +9,20 @@ fetch('../../fisheye.json')
         let loadPhotographers = data.photographers;
         let loadMedias = data.media;
 
-        loadMedias.map((media) => {
-            if (media.photographerId === parseInt(urlSearch)) {
+        loadMedias
+            .filter((media) => media.photographerId === parseInt(urlSearch))
+            .map((media) => {
                 mediasPageContainer.innerHTML += new MediaCard(media).getMediaCard();
                 lightboxModalContent.innerHTML += new MediaCard(media).getMediaLightbox();
-            }
+                // console.log(media)
         })
 
-        loadPhotographers.find((photographer) => {
-            if (photographer.id === parseInt(urlSearch)) {
+        const photographer = loadPhotographers.find((photographer) => photographer.id === parseInt(urlSearch));
+        // loadPhotographers.find((photographer) => {
+            if (photographer) {
                 photographersPageCardsContainer.innerHTML = new PhotographerCard(photographer).getPhotographerPageCard();
             }
-        })
+        // })
     })
     .catch(err => {
         console.log(err);
