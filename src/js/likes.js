@@ -1,6 +1,20 @@
+window.onload = likesPerPhotographer;
+// document.addEventListener("DOMContentLoaded", likesPerPhotographer);
+//
+// document.addEventListener("DOMContentLoaded", () => {
+//     likesPerPhotographer();
+// });
+//
+//
+// document.addEventListener('DOMContentLoaded', (event) => {
+//     console.log('DOM fully loaded and parsed');
+//     likesPerPhotographer()
+// });
+
 let selectedBtnIndex = [];
 
-window.onload = likesPerPhotographer;
+
+
 
 document.body.addEventListener( 'click',  (btn) => {
     let likesBtn = btn.target;
