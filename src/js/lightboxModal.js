@@ -1,39 +1,60 @@
-let slideIndex =0;
-console.log(slideIndex)
-// let selectedMedia = document.getAttribute("data-filter");
-// console.log(selectedMedia)
+window.addEventListener("load", function(){
 
-// Open the Modal
+    const openLightbox = document.querySelectorAll(".photographer-pictures-medias");
+    openLightbox.forEach((element, index) => {
+        element.addEventListener("click",() => {
+            openLightboxOnEvent(index);
+        });
+    });
+
+    const closeLightboxModal = document.querySelector("#lightbox-close");
+    closeLightboxModal.addEventListener("click",closeLightbox);
+
+    const prevSlide = document.querySelector("#lightbox-prev-slide");
+    prevSlide.addEventListener("click",previousMedia);
+
+    const nextSlide = document.querySelector("#lightbox-next-slide");
+    nextSlide.addEventListener("click", nextMedia);
+})
+
 function openModal() {
     document.getElementById("lightbox-modal").style.display = "flex";
 }
 
-// Close the Modal
-function closeModal() {
+function closeLightbox() {
     document.getElementById("lightbox-modal").style.display = "none";
 }
 
-showSlides(slideIndex);
+function openLightboxOnEvent(index) {
+    openModal();
+    currentSlide(index +1);
+}
 
-// Next/previous controls
+function previousMedia() {
+    plusSlides(-1);
+}
+
+function nextMedia() {
+    plusSlides(1);
+}
+
+let slideIndex = 1;
+
 function plusSlides(n) {
     showSlides(slideIndex += n);
 }
 
-// Thumbnail image controls
 function currentSlide(n) {
     showSlides(slideIndex = n);
 }
-
 function showSlides(n) {
     let i;
-    const slides = document.getElementsByClassName("lightbox-slides");
+    let slides = document.querySelectorAll(".lightbox-slides");
     if (n > slides.length) {
-        slideIndex = 1
+        slideIndex = 1;
     }
-
     if (n < 1) {
-        slideIndex = slides.length
+        slideIndex = slides.length;
     }
     for (i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
