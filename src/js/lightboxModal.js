@@ -1,4 +1,4 @@
-window.addEventListener("load", function(){
+// window.addEventListener("load", function(){
 
     const openLightbox = document.querySelectorAll(".photographer-pictures-medias");
     openLightbox.forEach((element, index) => {
@@ -15,7 +15,7 @@ window.addEventListener("load", function(){
 
     const nextSlide = document.querySelector("#lightbox-next-slide");
     nextSlide.addEventListener("click", nextMedia);
-})
+// })
 
 function openModal() {
     document.getElementById("lightbox-modal").style.display = "flex";
