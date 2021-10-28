@@ -26,21 +26,29 @@
 
 .lightbox-close:hover,
 .lightbox-close:focus {
-  color: #999;
   text-decoration: none;
   cursor: pointer;
 }
 
 .lightbox-slides {
   display: flex;
-  justify-content: center;
-  align-items: center;
-
+  flex-direction: column;
+  //width: 100%;
   img {
+    margin: auto;
     object-fit: contain;
-    width: 70%;
+    width: 80%;
     max-height: 80vh;
+    box-shadow: 4px 0 #c7c7c7
   }
+    h4 {
+      position: relative;
+      left: 10%;
+      font-size: 2.5rem;
+      color: var(--color-primary);
+      font-weight: lighter;
+
+    }
 }
 
 .lightbox-prev,
@@ -55,9 +63,11 @@
   font-size: 5rem;
   transition: 0.6s ease;
 }
+
 .lightbox-prev {
   left: 4.5%;
 }
+
 .lightbox-next {
   right: 5%;
   border-radius: 3px 0 0 3px;

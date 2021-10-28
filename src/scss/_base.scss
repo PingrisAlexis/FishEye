@@ -13,7 +13,6 @@ ul {
   flex-wrap: wrap;
   margin: auto;
   justify-content: center;
-
 }
 
 li {
@@ -26,24 +25,6 @@ li {
   margin: 0.3rem 0.3rem;
   font-weight: bold;
   color: var(--color-primary);
-}
-
-.photographer-city {
-  font-size: 2rem;
-  color: var(--color-primary);
-}
-
-.photographer-tagline {
-  font-size: 1.6rem;
-  color : var(--color-tertiary)
-
-}
-
-.photographer-price {
-  font-size: 1.6rem;
-  font-weight: lighter;
-  color : var(--color-fourth)
-
 }
 
 .hide {
@@ -69,4 +50,3 @@ li {
   clip: rect(0,0,0,0);
   border: 0;
 }
-

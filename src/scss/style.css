@@ -35,22 +35,6 @@ li {
   color: var(--color-primary);
 }
 
-.photographer-city {
-  font-size: 2rem;
-  color: var(--color-primary);
-}
-
-.photographer-tagline {
-  font-size: 1.6rem;
-  color: var(--color-tertiary);
-}
-
-.photographer-price {
-  font-size: 1.6rem;
-  font-weight: lighter;
-  color: var(--color-fourth);
-}
-
 .hide {
   display: none;
 }
@@ -77,7 +61,7 @@ li {
 /*VARIABLES*/
 body {
   --color-primary: #901C1C;
-  --color-secondary: #db8876;
+  --color-secondary: #D3573C;
   --color-tertiary: #525252;
   --color-fourth: #C4C4C4;
   --background-secondary: #FAFAFA;
@@ -112,22 +96,6 @@ li {
   margin: 0.3rem 0.3rem;
   font-weight: bold;
   color: var(--color-primary);
-}
-
-.photographer-city {
-  font-size: 2rem;
-  color: var(--color-primary);
-}
-
-.photographer-tagline {
-  font-size: 1.6rem;
-  color: var(--color-tertiary);
-}
-
-.photographer-price {
-  font-size: 1.6rem;
-  font-weight: lighter;
-  color: var(--color-fourth);
 }
 
 .hide {
@@ -257,6 +225,9 @@ li {
   font-size: 2rem;
   color: var(--color-primary);
   justify-content: space-between;
+  font-weight: lighter;
+}
+.photographer-pictures-container h3 {
   font-weight: lighter;
 }
 .photographer-pictures-container button {
@@ -497,20 +468,27 @@ textarea {
 
 .lightbox-close:hover,
 .lightbox-close:focus {
-  color: #999;
   text-decoration: none;
   cursor: pointer;
 }
 
 .lightbox-slides {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
 }
 .lightbox-slides img {
+  margin: auto;
   object-fit: contain;
-  width: 70%;
+  width: 80%;
   max-height: 80vh;
+  box-shadow: 4px 0 #c7c7c7;
+}
+.lightbox-slides h4 {
+  position: relative;
+  left: 10%;
+  font-size: 2.5rem;
+  color: var(--color-primary);
+  font-weight: lighter;
 }
 
 .lightbox-prev,
@@ -561,7 +539,6 @@ header nav {
 
 .home-main-container h1 {
   display: block;
-  font-size: 2rem;
   color: var(--color-primary);
   position: absolute;
   top: 3.5rem;
@@ -590,6 +567,22 @@ header nav {
   border-radius: 50%;
   object-fit: cover;
   box-shadow: var(--img-shadow);
+}
+
+.photographer-city {
+  font-size: 2rem;
+  color: var(--color-primary);
+}
+
+.photographer-tagline {
+  font-size: 1.6rem;
+  color: var(--color-tertiary);
+}
+
+.photographer-price {
+  font-size: 1.6rem;
+  font-weight: lighter;
+  color: var(--color-tertiary);
 }
 
 /*MEDIAS QUERIES*/
