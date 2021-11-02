@@ -22,7 +22,16 @@ document.addEventListener('click',function launchContactModal(e){
 });
 
 //CLOSE CONTACT MODAL
-btnCloseContactModal.forEach((btn) => btn.addEventListener("click", closeContactModal));
+btnCloseContactModal.forEach((elt) => {
+    elt.addEventListener("click",() => {
+        closeContactModal();
+    });
+    elt.addEventListener("keydown", (event) => {
+        if (event.keyCode === 13) {
+            closeContactModal();
+        }
+    });
+});
 function closeContactModal() {
     contactModal.style.display = document.querySelector(".hide");
 }
@@ -152,7 +161,7 @@ function controlMessage() {
 }
 
 //SUBMIT FORM
-function validation(event){
+function validation(event)  {
 
     event.preventDefault();
 
