@@ -17,7 +17,6 @@
   }
   input {
     height: 4rem;
-
     border: 0.8px solid #ccc;
     outline: none;
   }
@@ -69,7 +68,8 @@ textarea {
   max-width: 50rem;
   animation-name: modalopen;
   animation-duration: 0.6s;
-  background: var(--color-secondary);;
+  background: var(--color-secondary);
+
   overflow: hidden;
   color: #fff;
   bottom: 3rem;
