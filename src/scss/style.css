@@ -182,12 +182,15 @@ li {
   background: var(--color-primary);
   color: #FFFFFF;
   border-radius: 1rem;
-  border-style: none;
   cursor: pointer;
+  z-index: 1;
 }
 .btn-bottom-photographer-page-contact input:hover,
+.btn-bottom-photographer-page-contact input:focus,
 .btn-header-photographer-page-contact input:hover,
-.form-submit input:hover {
+.btn-header-photographer-page-contact input:focus,
+.form-submit input:hover,
+.form-submit input:focus {
   background: var(--color-secondary);
   color: #333333;
 }
@@ -210,7 +213,8 @@ li {
   width: 35rem;
   margin: 3rem;
 }
-#media-cards-container img {
+#media-cards-container img,
+#media-cards-container video {
   width: 100%;
   height: 30rem;
   object-fit: cover;
@@ -227,8 +231,9 @@ li {
   justify-content: space-between;
   font-weight: lighter;
 }
-.photographer-pictures-container h3 {
+.photographer-pictures-container h2 {
   font-weight: lighter;
+  font-size: 2.5rem;
 }
 .photographer-pictures-container button {
   width: 3rem;
@@ -241,8 +246,7 @@ li {
 }
 
 .photographer-info {
-  width: 25rem;
-  height: 5rem;
+  padding: 1rem;
   position: fixed;
   background: var(--color-secondary);
   bottom: 0;
@@ -252,6 +256,10 @@ li {
   align-items: center;
   font-size: 2rem;
   border-radius: 1rem 1rem 0 0;
+  z-index: 1;
+}
+.photographer-info i {
+  margin-right: 2rem;
 }
 
 /*MEDIAS QUERIES*/
@@ -476,7 +484,8 @@ textarea {
   display: flex;
   flex-direction: column;
 }
-.lightbox-slides img {
+.lightbox-slides img,
+.lightbox-slides video {
   margin: auto;
   object-fit: contain;
   width: 80%;
@@ -532,7 +541,8 @@ header nav {
   transition: 0.6s ease-out;
   cursor: pointer;
 }
-.home-header-taglist li:hover {
+.home-header-taglist li:hover,
+.home-header-taglist li:focus {
   color: #FFFFFF;
   background-position: left;
 }
@@ -545,10 +555,9 @@ header nav {
   right: 3rem;
   font-weight: 500;
 }
-.home-main-container div {
+.home-main-container #photographers-home-card-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
 }
 .home-main-container article {
   padding: 3rem;
