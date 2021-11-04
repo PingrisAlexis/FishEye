@@ -11,6 +11,10 @@ html {
   overflow-x: hidden;
 }
 
+body {
+  max-width: 2000px;
+}
+
 a {
   text-decoration: none;
   /* no underline */
@@ -58,12 +62,41 @@ li {
   border: 0;
 }
 
+main {
+  overflow-y: hidden;
+}
+
+.stop-scroll {
+  overflow-y: hidden;
+}
+
+.ok-scroll {
+  overflow-y: auto;
+}
+
+.scroll-to-top {
+  margin-top: 3rem;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  border: none;
+  padding: 1rem;
+  font-size: 2rem;
+  border-radius: 0.5rem;
+  background-color: #db8876;
+  font-weight: lighter;
+  display: none;
+  z-index: 2;
+  cursor: pointer;
+}
+
 /*VARIABLES*/
 body {
   --color-primary: #901C1C;
   --color-secondary: #D3573C;
   --color-tertiary: #525252;
   --color-fourth: #C4C4C4;
+  --color-fifth: #db8876;
   --background-secondary: #FAFAFA;
   --img-shadow: 0px 4px 12px rgb(0 0 0 / 25%);
 }
@@ -74,6 +107,10 @@ html {
   overflow-x: hidden;
 }
 
+body {
+  max-width: 2000px;
+}
+
 a {
   text-decoration: none;
   /* no underline */
@@ -119,6 +156,34 @@ li {
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
+}
+
+main {
+  overflow-y: hidden;
+}
+
+.stop-scroll {
+  overflow-y: hidden;
+}
+
+.ok-scroll {
+  overflow-y: auto;
+}
+
+.scroll-to-top {
+  margin-top: 3rem;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  border: none;
+  padding: 1rem;
+  font-size: 2rem;
+  border-radius: 0.5rem;
+  background-color: #db8876;
+  font-weight: lighter;
+  display: none;
+  z-index: 2;
+  cursor: pointer;
 }
 
 .photographer-page-header nav {
@@ -181,9 +246,9 @@ li {
   font-size: 2rem;
   background: var(--color-primary);
   color: #FFFFFF;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   cursor: pointer;
-  z-index: 1;
+  border: none;
 }
 .btn-bottom-photographer-page-contact input:hover,
 .btn-bottom-photographer-page-contact input:focus,
@@ -191,30 +256,35 @@ li {
 .btn-header-photographer-page-contact input:focus,
 .form-submit input:hover,
 .form-submit input:focus {
-  background: var(--color-secondary);
+  background: var(--color-fifth);
   color: #333333;
+}
+
+.btn-bottom-photographer-page-contact input,
+.form-submit input {
+  z-index: 1;
 }
 
 .photographer-page-main {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   width: 80vw;
   margin: auto;
 }
 
-#media-cards-container {
+.media-cards-container {
   justify-self: center;
   align-items: baseline;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
 }
-#media-cards-container figure {
+.media-cards-container figure {
   width: 35rem;
   margin: 3rem;
 }
-#media-cards-container img,
-#media-cards-container video {
+.media-cards-container img,
+.media-cards-container video {
   width: 100%;
   height: 30rem;
   object-fit: cover;
@@ -226,14 +296,12 @@ li {
   display: flex;
   flex-direction: row;
   margin-top: 1rem;
-  font-size: 2rem;
+  font-size: 2.2rem;
   color: var(--color-primary);
   justify-content: space-between;
-  font-weight: lighter;
 }
-.photographer-pictures-container h2 {
+.photographer-pictures-container h3 {
   font-weight: lighter;
-  font-size: 2.5rem;
 }
 .photographer-pictures-container button {
   width: 3rem;
@@ -246,20 +314,49 @@ li {
 }
 
 .photographer-info {
-  padding: 1rem;
+  padding: 0.7rem;
   position: fixed;
-  background: var(--color-secondary);
+  background: var(--color-fifth);
   bottom: 0;
   right: 10rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
   font-size: 2rem;
-  border-radius: 1rem 1rem 0 0;
+  border-radius: 0.5rem 0.5rem 0 0;
   z-index: 1;
 }
 .photographer-info i {
-  margin-right: 2rem;
+  margin-right: 1.5rem;
+  margin-left: 0.5rem;
+}
+
+.order-by-container {
+  display: flex;
+  flex-direction: row;
+  font-size: 2rem;
+  align-items: center;
+  margin-top: 3rem;
+  margin-left: 2.5rem;
+}
+.order-by-container label {
+  margin-right: 1rem;
+  font-weight: bolder;
+}
+.order-by-container select {
+  text-align: center;
+  height: 5rem;
+  width: 18rem;
+  font-size: 2rem;
+  background: var(--color-primary);
+  color: #FFFFFF;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  z-index: 1;
+  border: none;
+}
+.order-by-container option {
+  border-style: dotted dashed solid double;
 }
 
 /*MEDIAS QUERIES*/
@@ -280,13 +377,18 @@ li {
     height: 5rem;
   }
 }
+@media screen and (min-width: 1025px) {
+  .media-cards-container {
+    justify-content: space-between;
+  }
+}
 @media screen and (min-width: 1300px) {
   .btn-bottom-photographer-page-contact {
     display: none;
   }
 
   .btn-header-photographer-page-contact {
-    margin-right: 13rem;
+    margin-right: 12rem;
   }
 
   .photographer-datas {
@@ -326,7 +428,6 @@ li {
 .form-modal-body input {
   height: 4rem;
   border: 0.8px solid #ccc;
-  outline: none;
 }
 
 .form-submit {
@@ -362,7 +463,7 @@ textarea {
   height: 100%;
   width: 100%;
   overflow: auto;
-  background: rgba(0, 0, 0, 0.3);
+  background-color: rgba(196, 196, 196, 0.4);
   padding-top: 10vh;
 }
 
@@ -374,7 +475,7 @@ textarea {
   max-width: 50rem;
   animation-name: modalopen;
   animation-duration: 0.6s;
-  background: var(--color-secondary);
+  background: var(--color-fifth);
   overflow: hidden;
   color: #fff;
   bottom: 3rem;
@@ -458,7 +559,7 @@ textarea {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: white;
+  background-color: #ffffff;
   justify-content: center;
   align-items: center;
 }
@@ -547,6 +648,9 @@ header nav {
   background-position: left;
 }
 
+.home-main-container {
+  text-align: center;
+}
 .home-main-container h1 {
   display: block;
   color: var(--color-primary);
@@ -558,10 +662,11 @@ header nav {
 .home-main-container #photographers-home-card-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: row;
 }
 .home-main-container article {
-  padding: 3rem;
-  width: 100%;
+  padding: 5rem;
   text-align: center;
 }
 .home-main-container h2 {
@@ -599,10 +704,6 @@ header nav {
   header .home-header-taglist {
     margin-bottom: 5rem;
   }
-
-  main article {
-    margin: 3rem;
-  }
 }
 @media screen and (min-width: 700px) {
   header .logo {
@@ -615,22 +716,6 @@ header nav {
   main h1 {
     font-size: 4rem;
   }
-
-  .home-main-container article {
-    padding: 3rem;
-    width: 33%;
-    text-align: center;
-  }
-}
-@media screen and (min-width: 1100px) {
-  .home-main-container article {
-    width: 100%;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .home-main-container article {
-    width: 50%;
-  }
 }
 @media screen and (min-width: 1550px) {
   .home-header-container ul {
@@ -640,10 +725,6 @@ header nav {
 
   header .logo {
     margin-left: 19rem;
-  }
-
-  main h1 {
-    margin-right: 15rem;
   }
 
   .home-main-container article {
