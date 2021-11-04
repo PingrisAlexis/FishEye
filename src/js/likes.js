@@ -1,18 +1,22 @@
-window.onload = likesPerPhotographer;
-
+// window.onload = likesPerPhotographer;
+window.onload = () => {
+    likesPerPhotographer();
+};
 let selectedBtnIndex = [];
-
+window.onload = () => {
 document.body.addEventListener( 'click',  (btn) => {
     let likesBtn = btn.target;
-    let likes = likesBtn.previousElementSibling;
     let selectedBtn = likesBtn.getAttribute("data-id");
+
+    let likes = likesBtn.previousElementSibling;
+    let likesCount = parseInt(likes.innerText);
 
     if (likesBtn.className === "far fa-heart like-btn") {
 
         if(!selectedBtnIndex.includes(selectedBtn)) {
             selectedBtnIndex.push(selectedBtn)
             likesBtn.style.fontWeight = "bold";
-            let likesCount = parseInt(likes.innerText);
+            // let likesCount = parseInt(likes.innerText);
             likesCount += 1;
             likes.innerText = likesCount;
             likesPerPhotographer();
@@ -20,13 +24,13 @@ document.body.addEventListener( 'click',  (btn) => {
         else {
             selectedBtnIndex = selectedBtnIndex.filter(item => item !== selectedBtn)
             likesBtn.style.fontWeight = "400";
-            let likesCount = parseInt(likes.innerText);
             likesCount -= 1;
             likes.innerText = likesCount;
             likesPerPhotographer();
         }
     }
 })
+};
 
 function likesPerPhotographer() {
     const likesPerMedia = document.querySelectorAll(".photographer-pictures-likes-container span");
