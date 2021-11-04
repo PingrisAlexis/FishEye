@@ -1,9 +1,8 @@
-// window.onload = likesPerPhotographer;
 window.onload = () => {
     likesPerPhotographer();
 };
 let selectedBtnIndex = [];
-window.onload = () => {
+
 document.body.addEventListener( 'click',  (btn) => {
     let likesBtn = btn.target;
     let selectedBtn = likesBtn.getAttribute("data-id");
@@ -30,7 +29,7 @@ document.body.addEventListener( 'click',  (btn) => {
         }
     }
 })
-};
+
 
 function likesPerPhotographer() {
     const likesPerMedia = document.querySelectorAll(".photographer-pictures-likes-container span");
