@@ -34,7 +34,8 @@ header {
   }
 }
 .home-main-container {
-  //display: flex;
+  text-align: center;
+
   h1 {
     display: block;
     color: var(--color-primary);
@@ -46,12 +47,12 @@ header {
   #photographers-home-card-container {
     display: flex;
     flex-wrap: wrap;
-          //justify-content: center;
-          //background: blue;
+          justify-content: center;
+    flex-direction: row;
   }
   article {
-    padding: 3rem;
-    width: 100%;
+    padding: 5rem;
+    //width: 100%;
     text-align: center;
   }
 
@@ -87,6 +88,7 @@ header {
 }
 
 
+
 /*MEDIAS QUERIES*/
 @media screen and (max-width:1300px) {
   header {
@@ -94,11 +96,11 @@ header {
       margin-bottom: 5rem;
     }
   }
-  main {
-    article {
-      margin: 3rem;
-    }
-  }
+  //main {
+  //  article {
+  //    margin: 3rem;
+  //  }
+  //}
 }
 
 @media screen and (min-width:700px) {
@@ -115,30 +117,29 @@ header {
       font-size: 4rem;
     }
   }
-  .home-main-container {
-    article {
-      padding: 3rem;
-      width: 33%;
-      text-align: center;
-    }
-  }
+  //.home-main-container {
+  //  article {
+  //    padding: 3rem;
+  //    width: 33%;
+  //  }
+  //}
 }
 
-@media screen and (min-width:1100px) {
-  .home-main-container {
-    article {
-      width: 100%;
-    }
-  }
-}
+//@media screen and (min-width:1100px) {
+//  .home-main-container {
+//    article {
+//      width: 100%;
+//    }
+//  }
+//}
 
-@media screen and (min-width:1200px) {
-  .home-main-container {
-    article {
-      width: 50%;
-    }
-  }
-}
+//@media screen and (min-width:1200px) {
+//  .home-main-container {
+//    article {
+//      width: 50%;
+//    }
+//  }
+//}
 
 @media screen and (min-width:1550px) {
   .home-header-container {
@@ -153,11 +154,11 @@ header {
       margin-left: 19rem;
     }
   }
-  main {
-    h1 {
-      margin-right: 15rem;
-    }
-  }
+  //main {
+  //  h1 {
+  //    margin-right: 15rem;
+  //  }
+  //}
   .home-main-container {
     article {
       width: 33%;

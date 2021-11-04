@@ -1,28 +1,58 @@
-// window.addEventListener("load", function(){
+window.addEventListener("load", function(){
 
-    const openLightbox = document.querySelectorAll(".photographer-pictures-medias");
+    const openLightbox = document.querySelectorAll(".lightbox-open");
     openLightbox.forEach((element, index) => {
         element.addEventListener("click",() => {
             openLightboxOnEvent(index);
+        });
+        element.addEventListener("keydown", (event) => {
+            if (event.keyCode === 13) {
+                openLightboxOnEvent(index);
+            }
         });
     });
 
     const closeLightboxModal = document.querySelector("#lightbox-close");
     closeLightboxModal.addEventListener("click",closeLightbox);
+    closeLightboxModal.addEventListener("keydown", (event) => {
+        if (event.keyCode === 13) {
+            closeLightbox();
+        }
+    });
 
     const prevSlide = document.querySelector("#lightbox-prev-slide");
     prevSlide.addEventListener("click",previousMedia);
+    prevSlide.addEventListener("keydown", (event) => {
+        if (event.keyCode === 13) {
+            previousMedia();
+        }
+    });
 
     const nextSlide = document.querySelector("#lightbox-next-slide");
     nextSlide.addEventListener("click", nextMedia);
-// })
+    nextSlide.addEventListener("keydown", (event) => {
+        if (event.keyCode === 13) {
+            nextMedia();
+        }
+    });
+
+})
+const rootElement = document.querySelector("html");
 
 function openModal() {
-    document.getElementById("lightbox-modal").style.display = "flex";
+    rootElement.classList.add("stop-scroll");
+    ScrollToTopBtn.style.display = "none";
+
+    document.querySelector(".lightbox-modal").style.display = "flex";
+    document.querySelector(".lightbox-close").focus();
 }
 
 function closeLightbox() {
     document.getElementById("lightbox-modal").style.display = "none";
+    rootElement.classList.remove("stop-scroll");
+    ScrollToTopBtn.style.display = "flex";
+
+
 }
 
 function openLightboxOnEvent(index) {

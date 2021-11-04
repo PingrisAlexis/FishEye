@@ -9,75 +9,91 @@
     <link rel="stylesheet" href="../scss/style.css">
     <title>FishEye</title>
 </head>
-<body >
-    <header class="photographer-page-header"></header>
-    <div class="sort-by">
-        <label for="sort-by">Trier par </label>
-            <select name="sort-by" id="sort-by">
-                <option value="Popularité">Popularité</option>
-                <option value="Date">Date</option>
-                <option value="Titre">Titre</option>
-            </select>
+<body  id="appBody">
+
+    <button class="scroll-to-top" title="Go to top" aria-label="Revenir en haut du site">Haut du site</button>
+
+    <header>
+        <nav>
+            <a href="../../index.html">
+                <img class="logo logo-photographer" src="../../assets/global/logo-fisheye.png" alt="logo Fisheye" aria-label="Lien direction home">
+            </a>
+        </nav>
+    </header>
+
+    <div tabindex=-1  class="form-container">
+        <div class="form-content">
+            <span tabindex="0" class="form-close"></span>
+            <div class="form-modal-body">
+                <h2>Contactez-moi</h2>
+                <form  name="contact" id="contact" action="index.html" method="post">
+                    <div class="formData">
+                        <label for="user-firstname">Prénom</label>
+                        <br>
+                        <input class="text-control" type="text" id="user-firstname" name="user-firstname" minlength="2" maxlength="20">
+                        <span class="info-form" id="info-firstname"></span>
+                        <br>
+                    </div>
+                    <div class="formData">
+                        <label for="user-lastname">Nom</label><br>
+                        <input class="text-control" type="text" id="user-lastname" name="user-lastname" minlength="2" maxlength="20">
+                        <span class="info-form" id="info-lastname"></span>
+                        <br>
+                    </div>
+                    <div class="formData">
+                        <label for="user-email">E-mail</label><br>
+                        <input class="text-control" type="email" id="user-email" name="user-email">
+                        <span class="info-form" id="info-email"></span>
+                        <br>
+                    </div>
+                    <div class="formData">
+                        <label for="user-message">Votre message</label>
+                        <br>
+                        <textarea class="text-control" id="user-message" name="user-message" minlength="2"></textarea>
+                        <span class="info-form" id="info-message"></span>
+                    </div>
+                    <div class="form-submit">
+                        <input aria-label="Envoyer" class="btn-submit" type="submit" id="btn-form-submit" value="Envoyer">
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
+
     <main class="photographer-page-main">
-        <div id="media-cards-container"></div>
-        <div id="lightbox-modal" class="lightbox-modal" role="lightbox">
-            <span class="lightbox-close lightbox-cursor" id="lightbox-close" role="close lightbox">&times;</span>
-            <div class="lightbox-modal-content">
-                    <a class="lightbox-prev" id="lightbox-prev-slide" role="previous slide">&#10094;</a>
-                    <a class="lightbox-next" id="lightbox-next-slide" role="next slide">&#10095;</a>
-            </div>
+
+        <div class="photographer-page-header"></div>
+
+        <div class="order-by-container">
+            <label for="order-by">Trier par</label>
+            <select class="order-by-select" name="order-by" id="order-by">
+                <option class="order-by-btn" value="Popularité">Popularité</option>
+                <option class="order-by-btn" value="Date">Date</option>
+                <option class="order-by-btn" value="Titre">Titre</option>
+            </select>
         </div>
-        <div class="form-container">
-            <div class="form-content">
-                <span class="form-close"></span>
-                <div class="form-modal-body">
-                    <h2>Contactez-moi</h2>
-                    <form  name="contact" id="contact" action="index.html" method="post">
-                        <div class="formData">
-                            <label for="user-firstname">Prénom</label>
-                            <br>
-                            <input class="text-control" type="text" id="user-firstname" name="user-firstname" minlength="2" maxlength="20">
-                            <span class="info-form" id="info-firstname"></span>
-                            <br>
-                        </div>
-                        <div class="formData">
-                            <label for="user-lastname">Nom</label><br>
-                            <input class="text-control" type="text" id="user-lastname" name="user-lastname" minlength="2" maxlength="20">
-                            <span class="info-form" id="info-lastname"></span>
-                            <br>
-                        </div>
-                        <div class="formData">
-                            <label for="user-email">E-mail</label><br>
-                            <input class="text-control" type="email" id="user-email" name="user-email">
-                            <span class="info-form" id="info-email"></span>
-                            <br>
-                        </div>
-                        <div class="formData" >
-                            <label for="user-message">Votre message</label>
-                            <br>
-                            <textarea class="text-control" id="user-message" name="user-message" minlength="2"></textarea>
-                            <span class="info-form" id="info-message"></span>
-                        </div>
-                        <div class="form-submit">
-                            <label for="btn-form-submit"></label>
-                            <input class="btn-submit" type="submit" id="btn-form-submit" value="Envoyer">
-                            <span class="info-form" id="info-signup"></span>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+
+        <div class="media-cards-container"></div>
+
     </main>
+
+    <div aria-label="image closeup view" id="lightbox-modal" class="lightbox-modal">
+        <span tabindex="0" aria-label="close dialog" class="lightbox-close" id="lightbox-close">&times;</span>
+        <div class="lightbox-modal-content">
+            <a tabindex="0" aria-label="previous image" class="lightbox-prev" id="lightbox-prev-slide">&#10094;</a>
+            <a tabindex="0" aria-label="next image" class="lightbox-next" id="lightbox-next-slide">&#10095;</a>
+        </div>
+    </div>
+
+    <script src="../js/likes.js"></script>
 
     <script src="../js/photographerPageBuild.js"></script>
     <script src="../js/photographerCard.js"></script>
     <script src="../js/formContactModal.js" ></script>
     <script src="../js/mediaCard.js"></script>
-    <script src="../js/likes.js"></script>
     <script src="../js/lightboxModal.js"></script>
     <script src="../js/mediaFactory.js"></script>
+    <script src="../js/scrollToTop.js"></script>
 
-    <!--    <script src="../js/lightboxtest.js" ></script>-->
 </body>
 </html>
