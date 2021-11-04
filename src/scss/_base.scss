@@ -4,6 +4,10 @@ html {
   overflow-x: hidden;
 }
 
+body {
+  max-width: 2000px;
+}
+
 a {
   text-decoration: none; /* no underline */
 }
@@ -37,7 +41,6 @@ li {
 
 .active {
   background: var(--color-primary);
-  //color: #FFFFFF;
 }
 
 .sr-only {
@@ -49,4 +52,32 @@ li {
   overflow: hidden;
   clip: rect(0,0,0,0);
   border: 0;
+}
+
+main {
+  overflow-y: hidden;
+}
+
+.stop-scroll {
+  overflow-y: hidden;
+}
+
+.ok-scroll {
+  overflow-y: auto;
+}
+
+.scroll-to-top {
+  margin-top: 3rem;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  border: none;
+  padding: 1rem;
+  font-size: 2rem;
+  border-radius: 0.5rem;
+  background-color: #db8876;
+  font-weight: lighter;
+  display: none;
+  z-index: 2;
+  cursor: pointer;
 }
