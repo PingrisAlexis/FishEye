@@ -1,22 +1,24 @@
 
-class Image {
-    constructor (imageUrl) {
-        this.imageUrl = imageUrl
+class ImageMedia {
+    constructor (media) {
+        this.media  = media;
     }
 
     getElement() {
-        return `<img class="img" src="${this.imageUrl}" alt="">`
+        return `                        
+               <img tabindex="0" class="lightbox-open" src="../../assets/media/photographers-pictures/${this.media.photographerId}/${this.media.image}" alt="${this.media.alt}."/>
+                `
     }
 }
 
-class Video {
-    constructor (videoUrl) {
-        this.videoUrl = videoUrl
+class VideoMedia {
+    constructor (media) {
+        this.media = media;
     }
 
     getElement() {
-        return `<video controls>
-		            <source src="${this.videoUrl}">
+        return `<video tabindex="0" title="${this.media.alt}" class="lightbox-open" controls>
+		            <source  src="../../assets/media/photographers-pictures/${this.media.photographerId}/${this.media.video}">
                 </video>`
     }
 }
@@ -27,25 +29,9 @@ class MediaFactory {
     }
 
     getDOMElement() {
-        if (this.media.endsWith('.mp4')) {
-            return new Video(this.media).getElement()
+        if (this.media.video) {
+            return new VideoMedia(this.media).getElement()
         }
-        return new Image(this.media).getElement()
+        return new ImageMedia(this.media).getElement()
     }
 }
-
-
-const media = [
-    'toto.jpg',
-    'toto.jpg',
-    'toto.mp4',
-    'toto.jpg',
-]
-
-const completeDom = media.map((m) => {
-    return new MediaFactory(m).getDOMElement()
-})
-
-document.querySelector('#root').innerHTML = completeDom.join('');
-
-console.log(completeDom);
