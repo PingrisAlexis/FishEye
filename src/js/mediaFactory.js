@@ -1,4 +1,3 @@
-
 class ImageMedia {
     constructor (media) {
         this.media  = media;
