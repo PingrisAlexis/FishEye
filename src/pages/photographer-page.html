@@ -2,18 +2,17 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
     <link rel="shortcut icon" type="image/png" href="../../assets/global/favicon-fisheye.png">
     <link rel="stylesheet" href="../scss/style.css">
     <title>FishEye</title>
 </head>
-<body  id="appBody">
+<body id="appBody">
 
     <button class="scroll-to-top" title="Go to top" aria-label="Revenir en haut du site">Haut du site</button>
 
-    <header>
+    <header class="banner">
         <nav>
             <a href="../../index.html">
                 <img class="logo logo-photographer" src="../../assets/global/logo-fisheye.png" alt="logo Fisheye" aria-label="Lien direction home">
@@ -21,7 +20,7 @@
         </nav>
     </header>
 
-    <div tabindex=-1  class="form-container">
+    <div  role="dialog" tabindex=-1  class="form-container">
         <div class="form-content">
             <span tabindex="0" class="form-close"></span>
             <div class="form-modal-body">
@@ -67,33 +66,34 @@
         <div class="order-by-container">
             <label for="order-by">Trier par</label>
             <select class="order-by-select" name="order-by" id="order-by">
-                <option class="order-by-btn" value="Popularité">Popularité</option>
-                <option class="order-by-btn" value="Date">Date</option>
-                <option class="order-by-btn" value="Titre">Titre</option>
+                <option tabindex="0" class="order-by-btn" value="Popularité">Popularité</option>
+                <option tabindex="0" class="order-by-btn" value="Date">Date</option>
+                <option tabindex="0" class="order-by-btn" value="Titre">Titre</option>
             </select>
         </div>
 
         <div class="media-cards-container"></div>
 
-    </main>
-
-    <div aria-label="image closeup view" id="lightbox-modal" class="lightbox-modal">
-        <span tabindex="0" aria-label="close dialog" class="lightbox-close" id="lightbox-close">&times;</span>
-        <div class="lightbox-modal-content">
-            <a tabindex="0" aria-label="previous image" class="lightbox-prev" id="lightbox-prev-slide">&#10094;</a>
-            <a tabindex="0" aria-label="next image" class="lightbox-next" id="lightbox-next-slide">&#10095;</a>
+        <div  role="dialog" aria-label="image closeup view" id="lightbox-modal" class="lightbox-modal">
+            <span aria-label="close dialog" class="lightbox-close">&times;</span>
+            <div class="lightbox-modal-content">
+                <a aria-label="previous image" class="lightbox-prev">&#10094;</a>
+                <a aria-label="next image" class="lightbox-next">&#10095;</a>
+            </div>
         </div>
-    </div>
 
+    </main>
     <script src="../js/likes.js"></script>
 
+    <script src="../js/mediaCard.js"></script>
+    <script src="../js/sortHandler.js"></script>
     <script src="../js/photographerPageBuild.js"></script>
     <script src="../js/photographerCard.js"></script>
     <script src="../js/formContactModal.js" ></script>
-    <script src="../js/mediaCard.js"></script>
     <script src="../js/lightboxModal.js"></script>
     <script src="../js/mediaFactory.js"></script>
     <script src="../js/scrollToTop.js"></script>
+    <script src="../js/focusableElements.js"></script>
 
 </body>
 </html>
