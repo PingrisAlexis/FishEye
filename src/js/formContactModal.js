@@ -39,7 +39,7 @@ btnCloseContactModal.forEach((elt) => {
     });
 });
 
-// firstFocusableElementFormContact.focus();
+
 function closeContactModal() {
     contactModal.style.display = document.querySelector(".hide");
 }
@@ -47,7 +47,7 @@ function closeContactModal() {
 //INVALID INPUT
 function invalidControl(selector, errorMessage) {
     selector.textContent = errorMessage;
-    selector.style.color = "red";
+    selector.style.color = "#901C1C";
 
     return false;
 }
