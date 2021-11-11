@@ -62,16 +62,9 @@ li {
   border: 0;
 }
 
-main {
-  overflow-y: hidden;
-}
-
 .stop-scroll {
   overflow-y: hidden;
-}
-
-.ok-scroll {
-  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .scroll-to-top {
@@ -83,7 +76,7 @@ main {
   padding: 1rem;
   font-size: 2rem;
   border-radius: 0.5rem;
-  background-color: #db8876;
+  background: var(--color-fifth);
   font-weight: lighter;
   display: none;
   z-index: 2;
@@ -158,16 +151,9 @@ li {
   border: 0;
 }
 
-main {
-  overflow-y: hidden;
-}
-
 .stop-scroll {
   overflow-y: hidden;
-}
-
-.ok-scroll {
-  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .scroll-to-top {
@@ -179,7 +165,7 @@ main {
   padding: 1rem;
   font-size: 2rem;
   border-radius: 0.5rem;
-  background-color: #db8876;
+  background: var(--color-fifth);
   font-weight: lighter;
   display: none;
   z-index: 2;
@@ -222,6 +208,7 @@ main {
 .btn-header-photographer-page-contact {
   position: relative;
   bottom: 6rem;
+  left: 1.8rem;
 }
 
 .btn-bottom-photographer-page-contact {
@@ -229,6 +216,7 @@ main {
   bottom: 5rem;
   left: 0.1rem;
   margin: auto;
+  z-index: 1;
 }
 
 .btn-bottom-photographer-page-contact,
@@ -241,7 +229,7 @@ main {
 .btn-bottom-photographer-page-contact input,
 .btn-header-photographer-page-contact input,
 .form-submit input {
-  height: 4rem;
+  height: 5rem;
   width: 18rem;
   font-size: 2rem;
   background: var(--color-primary);
@@ -249,15 +237,7 @@ main {
   border-radius: 0.5rem;
   cursor: pointer;
   border: none;
-}
-.btn-bottom-photographer-page-contact input:hover,
-.btn-bottom-photographer-page-contact input:focus,
-.btn-header-photographer-page-contact input:hover,
-.btn-header-photographer-page-contact input:focus,
-.form-submit input:hover,
-.form-submit input:focus {
-  background: var(--color-fifth);
-  color: #333333;
+  margin-right: 2rem;
 }
 
 .btn-bottom-photographer-page-contact input,
@@ -299,8 +279,10 @@ main {
   font-size: 2.2rem;
   color: var(--color-primary);
   justify-content: space-between;
+  height: 2rem;
 }
-.photographer-pictures-container h3 {
+.photographer-pictures-container h2 {
+  font-size: 2.5rem;
   font-weight: lighter;
 }
 .photographer-pictures-container button {
@@ -314,49 +296,19 @@ main {
 }
 
 .photographer-info {
+  width: 20rem;
   padding: 0.7rem;
   position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
   background: var(--color-fifth);
   bottom: 0;
-  right: 10rem;
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  flex-wrap: nowrap;
   font-size: 2rem;
   border-radius: 0.5rem 0.5rem 0 0;
   z-index: 1;
-}
-.photographer-info i {
-  margin-right: 1.5rem;
-  margin-left: 0.5rem;
-}
-
-.order-by-container {
-  display: flex;
-  flex-direction: row;
-  font-size: 2rem;
-  align-items: center;
-  margin-top: 3rem;
-  margin-left: 2.5rem;
-}
-.order-by-container label {
-  margin-right: 1rem;
-  font-weight: bolder;
-}
-.order-by-container select {
-  text-align: center;
-  height: 5rem;
-  width: 18rem;
-  font-size: 2rem;
-  background: var(--color-primary);
-  color: #FFFFFF;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  z-index: 1;
-  border: none;
-}
-.order-by-container option {
-  border-style: dotted dashed solid double;
 }
 
 /*MEDIAS QUERIES*/
@@ -375,6 +327,10 @@ main {
 .btn-header-photographer-page-contact input,
 .form-submit input {
     height: 5rem;
+  }
+
+  .photographer-info {
+    left: 85%;
   }
 }
 @media screen and (min-width: 1025px) {
@@ -411,6 +367,7 @@ main {
 .form-modal-body {
   margin: 3rem;
   height: 75vh;
+  z-index: 2;
 }
 .form-modal-body h2 {
   font-size: 4rem;
@@ -424,10 +381,6 @@ main {
   margin-top: 1rem;
   color: #333333;
   text-align: left;
-}
-.form-modal-body input {
-  height: 4rem;
-  border: 0.8px solid #ccc;
 }
 
 .form-submit {
@@ -457,7 +410,7 @@ textarea {
 .form-container {
   display: none;
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   left: 0;
   top: 0;
   height: 100%;
@@ -553,7 +506,7 @@ textarea {
 .lightbox-modal {
   display: none;
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   left: 0;
   top: 0;
   width: 100%;
@@ -593,7 +546,7 @@ textarea {
   max-height: 80vh;
   box-shadow: 4px 0 #c7c7c7;
 }
-.lightbox-slides h4 {
+.lightbox-slides h3 {
   position: relative;
   left: 10%;
   font-size: 2.5rem;
@@ -623,17 +576,60 @@ textarea {
   border-radius: 3px 0 0 3px;
 }
 
+.order-by-container {
+  display: flex;
+  flex-direction: row;
+  font-size: 2rem;
+  align-items: center;
+  margin-top: 3rem;
+  margin-left: 2.5rem;
+}
+.order-by-container label {
+  margin-right: 1rem;
+  font-weight: bolder;
+}
+.order-by-container select {
+  text-align: center !important;
+  height: 5rem !important;
+  width: 18rem !important;
+  font-size: 2rem !important;
+  background: var(--color-primary);
+  color: #FFFFFF;
+  border-radius: 0.5rem !important;
+  cursor: pointer;
+  border: none;
+}
+
+a {
+  width: auto;
+}
+
 header {
+  margin: auto;
   display: flex;
   flex-wrap: wrap;
-  padding: 3rem 2rem;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem 0;
 }
 header .logo {
   height: 4rem;
 }
-header nav {
-  width: 100vw;
+header div {
+  width: 100%;
   display: flex;
+  justify-content: space-between;
+}
+header nav {
+  width: 100%;
+}
+header ul {
+  margin-top: 1rem;
+}
+header h1 {
+  margin-top: 0.5rem;
+  color: var(--color-primary);
+  font-weight: 500;
 }
 
 .home-header-taglist li {
@@ -650,14 +646,6 @@ header nav {
 
 .home-main-container {
   text-align: center;
-}
-.home-main-container h1 {
-  display: block;
-  color: var(--color-primary);
-  position: absolute;
-  top: 3.5rem;
-  right: 3rem;
-  font-weight: 500;
 }
 .home-main-container #photographers-home-card-container {
   display: flex;
@@ -706,25 +694,27 @@ header nav {
   }
 }
 @media screen and (min-width: 700px) {
+  header {
+    width: 77vw;
+  }
   header .logo {
     height: 6rem;
   }
   header ul {
     position: relative;
   }
-
-  main h1 {
+  header h1 {
     font-size: 4rem;
   }
+  header div {
+    display: flex;
+    justify-content: space-between;
+  }
 }
-@media screen and (min-width: 1550px) {
+@media screen and (min-width: 1650px) {
   .home-header-container ul {
     margin: auto;
     bottom: 5rem;
-  }
-
-  header .logo {
-    margin-left: 19rem;
   }
 
   .home-main-container article {

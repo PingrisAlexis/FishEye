@@ -2,7 +2,7 @@
 .lightbox-modal {
   display: none;
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   left: 0;
   top: 0;
   width: 100%;
@@ -41,7 +41,7 @@
     max-height: 80vh;
     box-shadow: 4px 0 #c7c7c7
   }
-  h4 {
+  h3 {
     position: relative;
     left: 10%;
     font-size: 2.5rem;

@@ -1,6 +1,8 @@
+
 .photographer-page-header {
   nav {
     margin-bottom: 5rem;
+
   }
   h1 {
     font-size: 4rem;
@@ -36,6 +38,7 @@
 .btn-header-photographer-page-contact {
   position: relative;
   bottom: 6rem;
+  left: 1.8rem;
 }
 
 .btn-bottom-photographer-page-contact {
@@ -43,6 +46,7 @@
   bottom: 5rem;
   left: 0.1rem;
   margin: auto;
+  z-index: 1;
 
 }
 
@@ -57,7 +61,7 @@
 .btn-header-photographer-page-contact,
 .form-submit {
     input {
-      height: 4rem;
+      height: 5rem;
       width: 18rem;
       font-size: 2rem;
       background: var(--color-primary);
@@ -65,12 +69,8 @@
       border-radius: 0.5rem;
       cursor: pointer;
       border: none;
+      margin-right: 2rem;
       }
-    input:hover,
-    input:focus {
-      background: var(--color-fifth);
-      color: #333333;
-    }
 }
 .btn-bottom-photographer-page-contact,
 .form-submit {
@@ -115,9 +115,11 @@
     font-size: 2.2rem;
     color: var(--color-primary);
     justify-content: space-between;
+    height: 2rem;
 
   }
-  h3 {
+  h2 {
+    font-size: 2.5rem;
     font-weight: lighter;
   }
   button {
@@ -132,52 +134,26 @@
 }
 
 .photographer-info {
+  width: 20rem;
   padding: 0.7rem;
   position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
   background: var(--color-fifth);
   bottom: 0;
-  right: 10rem;
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  flex-wrap: nowrap;
   font-size: 2rem;
   border-radius:0.5rem 0.5rem 0 0;
   z-index: 1;
-  i {
-    margin-right: 1.5rem;
-    margin-left: 0.5rem;
-  }
 }
 
-.order-by-container {
-  display: flex;
-  flex-direction: row;
-  font-size: 2rem;
-  align-items: center;
-  margin-top: 3rem;
-  margin-left: 2.5rem;
-  label {
-    margin-right: 1rem;
-    font-weight: bolder;
-  }
-  select {
-    text-align: center;
-    height: 5rem;
-    width: 18rem;
-    font-size: 2rem;
-    background: var(--color-primary);
-    color: #FFFFFF;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    z-index: 1;
-    border: none;
-  }
-  option {
-    border-style: dotted dashed solid double;
-  }
-}
 /*MEDIAS QUERIES*/
 @media screen and (min-width:550px) {
+  //.banner {
+  //  margin-left: 9.5vw;
+  //}
   .photographer-details-card {
     padding: 0 4rem;
     margin: auto;
@@ -194,6 +170,9 @@
       height: 5rem;
     }
   }
+  .photographer-info {
+    left: 85%;
+}
 }
 
 @media screen and (min-width:1025px) {

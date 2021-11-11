@@ -1,6 +1,7 @@
 .form-modal-body {
   margin: 3rem;
   height: 75vh;
+  z-index: 2;
   h2 {
     font-size: 4rem;
     color: #333333;
@@ -13,11 +14,6 @@
     margin-top: 1rem;
     color: #333333;
     text-align: left;
-
-  }
-  input {
-    height: 4rem;
-    border: 0.8px solid #ccc;
   }
 }
 .form-submit {
@@ -38,7 +34,6 @@
 
 .formData {
   margin-top: 1rem;
-
 }
 
 textarea {
@@ -49,7 +44,7 @@ textarea {
 .form-container {
   display: none;
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   left: 0;
   top: 0;
   height: 100%;

@@ -1,0 +1,23 @@
+.order-by-container {
+  display: flex;
+  flex-direction: row;
+  font-size: 2rem;
+  align-items: center;
+  margin-top: 3rem;
+  margin-left: 2.5rem;
+  label {
+    margin-right: 1rem;
+    font-weight: bolder;
+  }
+  select {
+    text-align: center !important;
+    height: 5rem !important;
+    width: 18rem !important;
+    font-size: 2rem !important;
+    background: var(--color-primary);
+    color: #FFFFFF;
+    border-radius: 0.5rem !important;
+    cursor: pointer;
+    border: none;
+  }
+}
