@@ -54,16 +54,10 @@ li {
   border: 0;
 }
 
-main {
-  overflow-y: hidden;
-}
 
 .stop-scroll {
   overflow-y: hidden;
-}
-
-.ok-scroll {
-  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .scroll-to-top {
@@ -75,7 +69,7 @@ main {
   padding: 1rem;
   font-size: 2rem;
   border-radius: 0.5rem;
-  background-color: #db8876;
+  background: var(--color-fifth);;
   font-weight: lighter;
   display: none;
   z-index: 2;
