@@ -13,11 +13,17 @@ const regexName = /^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-Zé
 const contactModal = document.querySelector(".form-container");
 const btnCloseContactModal = document.querySelectorAll(".form-close");
 
+// //FOCUS ELEMENTS
+const focusableElementsFormContact = "button, span, input, textarea";
+const firstFocusableElementFormContact = contactModal.querySelectorAll(focusableElementsFormContact)[0];
+const focusableContentFormContact = contactModal.querySelectorAll(focusableElementsFormContact);
+const lastFocusableElementFormContact = focusableContentFormContact[focusableContentFormContact.length - 1];
 
 //LAUNCH CONTACT MODAL
 document.addEventListener('click',function launchContactModal(e){
     if(e.target && e.target.className === "modal-btn"){
         contactModal.style.display = "block";
+        firstFocusableElementFormContact.focus();
     }
 });
 
@@ -32,6 +38,8 @@ btnCloseContactModal.forEach((elt) => {
         }
     });
 });
+
+// firstFocusableElementFormContact.focus();
 function closeContactModal() {
     contactModal.style.display = document.querySelector(".hide");
 }
@@ -143,9 +151,9 @@ function controlMessage() {
         return invalidControl(infoMessage, "Message requis");
 
     }
-    else if (message.value.trim().length < 8) {
+    else if (message.value.trim().length < 2) {
 
-        return invalidControl(infoMessage, "Le message doit contenir au moins huits caractéres");
+        return invalidControl(infoMessage, "Le message doit avoir au moins deux caractéres");
 
     }
     else if (testMessage === false){
@@ -193,7 +201,6 @@ function validation(event)  {
 function resetForm() {
 
     document.querySelector("form").reset();
-
 
     infoFirstname.previousElementSibling.style.border = "none";
     infoFirstname.textContent = "";
