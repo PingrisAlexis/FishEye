@@ -9,11 +9,10 @@ document.addEventListener("keydown", function(e) {
     if (e.shiftKey) {
 
         if (document.activeElement === firstFocusableElementLightbox) {
-            lastFocusableElementLightbox.focus();
             e.preventDefault();
+
+            lastFocusableElementLightbox.focus();
             console.log("focus lightbox last element")
-            console.log(firstFocusableElementLightbox)
-            console.log(lastFocusableElementLightbox)
         }
             else  if (document.activeElement === firstFocusableElementFormContact) {
                 lastFocusableElementFormContact.focus();
@@ -25,7 +24,6 @@ document.addEventListener("keydown", function(e) {
         if (document.activeElement === lastFocusableElementLightbox) {
             e.preventDefault();
             firstFocusableElementLightbox.focus();
-
             console.log("focus lightbox first element")
         }
             else   if (document.activeElement === lastFocusableElementFormContact ) {

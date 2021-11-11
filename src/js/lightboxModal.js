@@ -8,21 +8,15 @@ const firstFocusableElementLightbox = LightboxModal.querySelectorAll(focusableEl
 const focusableContentLightbox = LightboxModal.querySelectorAll(focusableElementsLightbox);
 const lastFocusableElementLightbox = focusableContentLightbox[focusableContentLightbox.length - 1];
 
-console.log("first focusable elemnt lightbox =>", firstFocusableElementLightbox)
-console.log("focusable elemnt lightbox =>", focusableContentLightbox)
-console.log("last focusable elemnt lightbox =>",lastFocusableElementLightbox)
 
 
 const rootElement = document.querySelector("html");
 
-
-
-window.addEventListener("load", function(){
-
+function handleLightbox() {
     //Open Lightbox
     const openLightbox = document.querySelectorAll(".lightbox-open");
     openLightbox.forEach((element, index) => {
-        element.addEventListener("click",() => {
+        element.addEventListener("click", () => {
             openLightboxOnEvent(index);
 
         });
@@ -36,7 +30,7 @@ window.addEventListener("load", function(){
 
     //Close Lightbox
     const closeLightboxModal = document.querySelector(".lightbox-close");
-    closeLightboxModal.addEventListener("click",closeLightbox);
+    closeLightboxModal.addEventListener("click", closeLightbox);
     closeLightboxModal.addEventListener("keydown", (event) => {
         if (event.keyCode === 13) {
             closeLightbox();
@@ -45,7 +39,7 @@ window.addEventListener("load", function(){
 
     //Previous Lightbox's slide
     const prevSlide = document.querySelector(".lightbox-prev");
-    prevSlide.addEventListener("click",previousMedia);
+    prevSlide.addEventListener("click", previousMedia);
     prevSlide.addEventListener("keydown", (event) => {
         if (event.keyCode === 13) {
             previousMedia();
@@ -60,10 +54,9 @@ window.addEventListener("load", function(){
             nextMedia();
         }
     });
-})
+}
 
 function openModal() {
-
     rootElement.classList.add("stop-scroll");
     ScrollToTopBtn.style.display = "none";
     LightboxModal.style.display = "flex";

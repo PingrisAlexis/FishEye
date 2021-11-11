@@ -1,12 +1,11 @@
+let allSelectedLikes = [];
 
-
-window.onload = () => {
-
+function handleLikes() {
     const likes = document.querySelectorAll(".like-btn");
 
     likes.forEach((like) => {
 
-        like.addEventListener("click",(like) => {
+        like.addEventListener("click", (like) => {
             likeDislike(like);
         });
 
@@ -17,12 +16,9 @@ window.onload = () => {
             }
         });
     });
-    
+
     likesPerPhotographer();
-
-};
-
-let allSelectedLikes = [];
+}
 
 function likeDislike (like) {
 
