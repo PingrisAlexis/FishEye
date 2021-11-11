@@ -10,7 +10,7 @@ class PhotographerCard {
 				<article>
 					<a  href="src/pages/photographer-page.html?id=${this.photographer.id}">
 						<div role="figure">
-							<img class="photographer-portrait" src="assets/media/photographers-portraits/${this.photographer.portrait}" aria-label="${this.photographer.name}">
+							<img class="photographer-portrait" src="assets/media/photographers-portraits/${this.photographer.portrait}" aria-label="${this.photographer.alt} alt="${this.photographer.alt}">
 							<h2>${this.photographer.name}</h2>
 						</div>
 					</a>
@@ -30,7 +30,7 @@ class PhotographerCard {
 				
         		<article class="photographer-details-card">
         			<div>
-        			     <img class="photographer-portrait" src="../../assets/media/photographers-portraits/${this.photographer.portrait}" aria-label="${this.photographer.name}" alt="">
+        			     <img class="photographer-portrait" src="../../assets/media/photographers-portraits/${this.photographer.portrait}" aria-label="${this.photographer.alt}" alt="${this.photographer.alt}">
 					</div>
 					<div class="btn-header-photographer-page-contact">
         				<input aria-label="contact button" class="modal-btn" type="submit" name="contact" value="Contactez-moi">
