@@ -16,7 +16,7 @@ header{
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
-  padding: 3rem 0;
+  padding: 3rem 0.5rem 0.5rem 0.5rem;
   .logo {
     height: 4rem;
   }
@@ -33,6 +33,7 @@ header{
 
   }
   h1 {
+    position: relative;
     margin-top: 0.5rem;
     color: var(--color-primary);
     font-weight: 500;
@@ -114,9 +115,13 @@ header{
     }
     ul {
       position: relative;
+
     }
     h1 {
       font-size: 4rem;
+      left: 2rem;
+      position: relative;
+
     }
     div {
       display: flex;

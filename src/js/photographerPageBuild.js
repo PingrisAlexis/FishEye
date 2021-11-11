@@ -3,6 +3,9 @@ const mediasPageContainer = document.querySelector(".media-cards-container");
 const urlSearch = new URLSearchParams(window.location.search).get("id");
 const lightboxModalContent = document.querySelector(".lightbox-modal-content");
 const sortByContainer = document.querySelector(".order-by-select");
+const contactFormPhotographerName = document.querySelector(".form-title");
+
+
 
 fetch("../../fisheye.json")
     .then(resp => resp.json())
@@ -26,8 +29,12 @@ fetch("../../fisheye.json")
         const currentPhotographer = loadPhotographers.find((photographer) => photographer.id === parseInt(urlSearch));
             if (currentPhotographer) {
                 photographersPageCardsContainer.innerHTML = new PhotographerCard(currentPhotographer).getPhotographerPageCard();
+                contactFormPhotographerName.innerHTML += new PhotographerCard(currentPhotographer).getPhotographerName();
             }
 
+        handleLikes();
+
+        handleLightbox();
     })
     .catch(err => {
         console.log(err);

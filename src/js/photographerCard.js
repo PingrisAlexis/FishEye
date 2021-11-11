@@ -59,4 +59,10 @@ class PhotographerCard {
 			`
 	}
 
+	getPhotographerName () {
+		return `
+				<h2>Contacter <br> ${this.photographer.name}</h2>
+		`
+	}
+
 }

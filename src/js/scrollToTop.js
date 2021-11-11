@@ -5,7 +5,7 @@ function scrollToTop() {
 }
 
 window.onscroll = () =>  {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 40) {
+    if (document.documentElement.scrollTop > 40) {
         ScrollToTopBtn.style.display = "flex";
     } else {
         ScrollToTopBtn.style.display = "none";
