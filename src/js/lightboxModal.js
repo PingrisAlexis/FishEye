@@ -1,18 +1,41 @@
+
+//LIGHTBOX
+const LightboxModal = document.querySelector(".lightbox-modal");
+
+//FOCUS ELEMENTS
+const focusableElementsLightbox = "a, span";
+const firstFocusableElementLightbox = LightboxModal.querySelectorAll(focusableElementsLightbox)[0];
+const focusableContentLightbox = LightboxModal.querySelectorAll(focusableElementsLightbox);
+const lastFocusableElementLightbox = focusableContentLightbox[focusableContentLightbox.length - 1];
+
+console.log("first focusable elemnt lightbox =>", firstFocusableElementLightbox)
+console.log("focusable elemnt lightbox =>", focusableContentLightbox)
+console.log("last focusable elemnt lightbox =>",lastFocusableElementLightbox)
+
+
+const rootElement = document.querySelector("html");
+
+
+
 window.addEventListener("load", function(){
 
+    //Open Lightbox
     const openLightbox = document.querySelectorAll(".lightbox-open");
     openLightbox.forEach((element, index) => {
         element.addEventListener("click",() => {
             openLightboxOnEvent(index);
+
         });
         element.addEventListener("keydown", (event) => {
             if (event.keyCode === 13) {
                 openLightboxOnEvent(index);
+
             }
         });
     });
 
-    const closeLightboxModal = document.querySelector("#lightbox-close");
+    //Close Lightbox
+    const closeLightboxModal = document.querySelector(".lightbox-close");
     closeLightboxModal.addEventListener("click",closeLightbox);
     closeLightboxModal.addEventListener("keydown", (event) => {
         if (event.keyCode === 13) {
@@ -20,7 +43,8 @@ window.addEventListener("load", function(){
         }
     });
 
-    const prevSlide = document.querySelector("#lightbox-prev-slide");
+    //Previous Lightbox's slide
+    const prevSlide = document.querySelector(".lightbox-prev");
     prevSlide.addEventListener("click",previousMedia);
     prevSlide.addEventListener("keydown", (event) => {
         if (event.keyCode === 13) {
@@ -28,56 +52,62 @@ window.addEventListener("load", function(){
         }
     });
 
-    const nextSlide = document.querySelector("#lightbox-next-slide");
+    //Next Lightbox's slide
+    const nextSlide = document.querySelector(".lightbox-next");
     nextSlide.addEventListener("click", nextMedia);
     nextSlide.addEventListener("keydown", (event) => {
         if (event.keyCode === 13) {
             nextMedia();
         }
     });
-
 })
-const rootElement = document.querySelector("html");
 
 function openModal() {
+
     rootElement.classList.add("stop-scroll");
     ScrollToTopBtn.style.display = "none";
-
-    document.querySelector(".lightbox-modal").style.display = "flex";
-    document.querySelector(".lightbox-close").focus();
+    LightboxModal.style.display = "flex";
 }
 
+
 function closeLightbox() {
-    document.getElementById("lightbox-modal").style.display = "none";
+
+    LightboxModal.style.display = "none";
     rootElement.classList.remove("stop-scroll");
     ScrollToTopBtn.style.display = "flex";
-
-
 }
 
 function openLightboxOnEvent(index) {
+
     openModal();
     currentSlide(index +1);
 }
 
 function previousMedia() {
+
     plusSlides(-1);
 }
 
 function nextMedia() {
+
     plusSlides(1);
 }
 
 let slideIndex = 1;
 
 function plusSlides(n) {
+
     showSlides(slideIndex += n);
 }
 
 function currentSlide(n) {
+
     showSlides(slideIndex = n);
 }
+
 function showSlides(n) {
+    firstFocusableElementLightbox.focus();
+    console.log(firstFocusableElementLightbox)
     let i;
     let slides = document.querySelectorAll(".lightbox-slides");
     if (n > slides.length) {
