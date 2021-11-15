@@ -1,4 +1,5 @@
 .photographer-page-header {
+  margin: 0.5rem;
   nav {
     margin-bottom: 5rem;
 
@@ -40,24 +41,18 @@
 }
 
 .btn-header-photographer-page-contact {
-  position: relative;
-  bottom: 6rem;
-  left: 1.8rem;
+  display: none;
 }
-
 .btn-bottom-photographer-page-contact {
-  position: fixed;
+  display: flex;
   bottom: 5rem;
-  left: 0.1rem;
-  margin: auto;
-  z-index: 1;
 }
 
 .btn-bottom-photographer-page-contact,
-.btn-header-photographer-page-contact{
-  display: flex;
-  width: 100vw;
-  justify-content: center;
+{
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .btn-bottom-photographer-page-contact,
@@ -164,8 +159,6 @@
     align-items: center;
     justify-content: space-between;
   }
-  .btn-bottom-photographer-page-contact,
-  .btn-header-photographer-page-contact,
   .form-submit {
     input {
       height: 5rem;
@@ -176,24 +169,7 @@
   }
 }
 
-@media screen and (min-width:1025px) {
-  .media-cards-container {
-    justify-content: space-between;
-  }
-}
-@media screen and (min-width:1300px) {
-  .btn-bottom-photographer-page-contact {
-    display: none;
-  }
-  .btn-header-photographer-page-contact {
-    margin-right: 12rem;
-  }
-  .photographer-datas {
-    white-space: nowrap;
-    ul {
-      flex-wrap: nowrap;
-    }
-  }
+@media screen and (min-width:800px) {
   .photographer-details-card {
     img {
       height: 20rem;
@@ -202,8 +178,26 @@
   }
 }
 
-@media screen and (max-width:1300px) {
+
+@media screen and (min-width:1025px) {
+  .media-cards-container {
+    justify-content: space-between;
+  }
   .btn-header-photographer-page-contact {
+    display: flex;
+    transform: translateX(-30%);
+  }
+  .btn-bottom-photographer-page-contact {
     display: none;
   }
+}
+@media screen and (min-width:1300px) {
+
+  .photographer-datas {
+    white-space: nowrap;
+    ul {
+      flex-wrap: nowrap;
+    }
   }
+
+}
