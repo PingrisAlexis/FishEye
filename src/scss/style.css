@@ -134,6 +134,7 @@ body {
 .btn-bottom-photographer-page-contact {
   display: flex;
   bottom: 5rem;
+  z-index: 1;
 }
 
 .btn-bottom-photographer-page-contact {
@@ -153,11 +154,6 @@ body {
   border-radius: 0.5rem;
   cursor: pointer;
   border: none;
-}
-
-.btn-bottom-photographer-page-contact input,
-.form-submit input {
-  z-index: 1;
 }
 
 .photographer-page-main {

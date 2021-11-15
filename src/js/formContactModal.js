@@ -16,8 +16,6 @@ const btnCloseContactModal = document.querySelectorAll(".form-close");
 // //FOCUS ELEMENTS
 const focusableElementsFormContact = "button, span, input, textarea";
 const firstFocusableElementFormContact = contactModal.querySelectorAll(focusableElementsFormContact)[0];
-const focusableContentFormContact = contactModal.querySelectorAll(focusableElementsFormContact);
-const lastFocusableElementFormContact = focusableContentFormContact[focusableContentFormContact.length - 1];
 
 //LAUNCH CONTACT MODAL
 document.addEventListener('click',function launchContactModal(e){

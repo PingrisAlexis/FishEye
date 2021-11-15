@@ -5,8 +5,6 @@ const lightboxModalContent = document.querySelector(".lightbox-modal-content");
 const sortByContainer = document.querySelector(".order-by-select");
 const contactFormPhotographerName = document.querySelector(".form-title");
 
-
-
 fetch("../../fisheye.json")
     .then(resp => resp.json())
     .then(data => {
@@ -23,18 +21,19 @@ fetch("../../fisheye.json")
         //Event handler on categories select
         sortByContainer.addEventListener("change",(e) => {
            handleSort(e.target.value, currentPhotographerMedia, mediasPageContainer, lightboxModalContent)
+            handleLikes();
+
         });
 
-        //Automatic photographer hydrate HTML
+        //hydrate photographer HTML
         const currentPhotographer = loadPhotographers.find((photographer) => photographer.id === parseInt(urlSearch));
             if (currentPhotographer) {
                 photographersPageCardsContainer.innerHTML = new PhotographerCard(currentPhotographer).getPhotographerPageCard();
                 contactFormPhotographerName.innerHTML += new PhotographerCard(currentPhotographer).getPhotographerName();
             }
-
         handleLikes();
-
         handleLightbox();
+
     })
     .catch(err => {
         console.log(err);
