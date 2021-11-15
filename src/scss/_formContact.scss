@@ -4,7 +4,6 @@
   z-index: 2;
   h2 {
     position: relative;
-    bottom: 2rem;
     font-size: 4rem;
     color: #333333;
   }
@@ -18,15 +17,17 @@
     text-align: left;
   }
 }
+
 .form-submit {
   margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .info-form {
   font-size: 2rem;
   font-weight: bold;
 }
-
 
 .text-control {
   margin: 0;
@@ -111,7 +112,6 @@ textarea {
 @media screen and (max-width:500px) {
   .form-modal-body {
     height: 100vh;
-
   }
   .form-content {
     position: relative;
