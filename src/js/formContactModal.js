@@ -55,7 +55,7 @@ function invalidControl(selector, errorMessage) {
 //VALID INPUT
 function validControl(selector, message) {
     selector.textContent = message;
-    selector.style.color = "green";
+    selector.style.color = "black";
 
     return selector.previousElementSibling.value;
 }
@@ -199,7 +199,7 @@ function validation(event)  {
 }
 //RESET FORM
 function resetForm() {
-
+    const infoForm = document.getElementById("info-submit-form");
     document.querySelector("form").reset();
 
     infoFirstname.previousElementSibling.style.border = "none";
@@ -213,5 +213,7 @@ function resetForm() {
 
     infoMessage.previousElementSibling.style.border = "none";
     infoMessage.textContent = "";
+
+    return validControl(infoForm, "Message envoyé!");
 }
 
