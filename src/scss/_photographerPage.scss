@@ -46,6 +46,8 @@
 .btn-bottom-photographer-page-contact {
   display: flex;
   bottom: 5rem;
+  z-index: 1;
+
 }
 
 .btn-bottom-photographer-page-contact,
@@ -69,13 +71,7 @@
     border: none;
   }
 }
-.btn-bottom-photographer-page-contact,
-.form-submit {
-  input {
-    z-index: 1;
 
-  }
-}
 
 .photographer-page-main {
   display: flex;
