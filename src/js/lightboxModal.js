@@ -1,18 +1,14 @@
-
 //LIGHTBOX
 const LightboxModal = document.querySelector(".lightbox-modal");
 
 //FOCUS ELEMENTS
 const focusableElementsLightbox = "a, span";
 const firstFocusableElementLightbox = LightboxModal.querySelectorAll(focusableElementsLightbox)[0];
-const focusableContentLightbox = LightboxModal.querySelectorAll(focusableElementsLightbox);
-const lastFocusableElementLightbox = focusableContentLightbox[focusableContentLightbox.length - 1];
-
-
 
 const rootElement = document.querySelector("html");
 
 function handleLightbox() {
+
     //Open Lightbox
     const openLightbox = document.querySelectorAll(".lightbox-open");
     openLightbox.forEach((element, index) => {
@@ -23,7 +19,7 @@ function handleLightbox() {
         element.addEventListener("keydown", (event) => {
             if (event.keyCode === 13) {
                 openLightboxOnEvent(index);
-
+                firstFocusableElementLightbox.focus();
             }
         });
     });
@@ -39,21 +35,34 @@ function handleLightbox() {
 
     //Previous Lightbox's slide
     const prevSlide = document.querySelector(".lightbox-prev");
-    prevSlide.addEventListener("click", previousMedia);
-    prevSlide.addEventListener("keydown", (event) => {
-        if (event.keyCode === 13) {
-            previousMedia();
-        }
-    });
+    if (prevSlide) {
+        console.log("existe")
+
+        prevSlide.addEventListener("click", previousMedia);
+        prevSlide.addEventListener("keydown", (event) => {
+            if (event.keyCode === 13) {
+                previousMedia();
+            }
+        });
+    }
+    else if (!prevSlide) {
+        console.log("existe pas ")
+    }
 
     //Next Lightbox's slide
     const nextSlide = document.querySelector(".lightbox-next");
-    nextSlide.addEventListener("click", nextMedia);
-    nextSlide.addEventListener("keydown", (event) => {
-        if (event.keyCode === 13) {
-            nextMedia();
-        }
-    });
+    if (nextSlide) {
+        console.log("existe")
+        nextSlide.addEventListener("click", nextMedia);
+        nextSlide.addEventListener("keydown", (event) => {
+            if (event.keyCode === 13) {
+                nextMedia();
+            }
+        });
+    }
+    else if (!nextSlide) {
+        console.log("existe pas ")
+    }
 }
 
 function openModal() {
@@ -101,10 +110,9 @@ function currentSlide(n) {
 }
 
 function showSlides(n) {
-    firstFocusableElementLightbox.focus();
-    console.log(firstFocusableElementLightbox)
     let i;
     let slides = document.querySelectorAll(".lightbox-slides");
+    console.log(slides)
     if (n > slides.length) {
         slideIndex = 1;
     }
