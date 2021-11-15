@@ -1,15 +1,15 @@
 @import "reset";
 @import "base";
 @import "variables";
-@import "base";
 @import "photographerPage";
 @import "formContact";
 @import "lightbox";
 @import "sortBy";
 
-a{
+a {
   width: auto;
 }
+
 header{
   margin: auto;
   display: flex;
@@ -95,9 +95,6 @@ header{
   color : var(--color-tertiary)
 }
 
-
-
-/*MEDIAS QUERIES*/
 @media screen and (max-width:1300px) {
   header {
     .home-header-taglist {
