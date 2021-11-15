@@ -22,6 +22,7 @@ fetch("../../fisheye.json")
         sortByContainer.addEventListener("change",(e) => {
            handleSort(e.target.value, currentPhotographerMedia, mediasPageContainer, lightboxModalContent)
             handleLikes();
+            handleLightbox();
 
         });
 

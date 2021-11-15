@@ -18,7 +18,7 @@ class PhotographerCard {
 					<p class="photographer-tagline">${this.photographer.tagline}</p>
 					<p class="photographer-price">${this.photographer.price}€/jour</p>
 					<ul>${this.photographer.tags.map(tag =>
-						`<li class="photographers-filter"  data-filter="${tag}">#${tag}
+			`<li class="photographers-filter"  data-filter="${tag}">#${tag}
 							<span class="sr-only">Filtre les artistes selon la catégorie ${tag}</span>
 						</li>`).join(' ')}
 					</ul> 
@@ -43,7 +43,7 @@ class PhotographerCard {
         				<p class="photographer-city">${this.photographer.city}, ${this.photographer.country}</p>
 						<p class="photographer-tagline">${this.photographer.tagline}</p>
 						<ul>${this.photographer.tags.map(tag =>
-							`<li aria-label="tag ${tag}" class="photographers-filter" data-filter="${tag}">#${tag}
+			`<li aria-label="tag ${tag}" class="photographers-filter" data-filter="${tag}">#${tag}
 								<span class="sr-only">Filtre les artistes selon la catégorie ${tag}</span>
 							</li>`).join(' ')}
 						</ul> 
