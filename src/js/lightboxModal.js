@@ -67,7 +67,9 @@ function closeLightbox() {
 
     LightboxModal.style.display = "none";
     rootElement.classList.remove("stop-scroll");
-    ScrollToTopBtn.style.display = "flex";
+    if (document.documentElement.scrollTop > 40) {
+        ScrollToTopBtn.style.display = "flex";
+    }
 }
 
 function openLightboxOnEvent(index) {
