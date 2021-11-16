@@ -2,7 +2,7 @@
 const LightboxModal = document.querySelector(".lightbox-modal");
 
 //FOCUS ELEMENTS
-const focusableElementsLightbox = "a, span";
+const focusableElementsLightbox = "span, a";
 const firstFocusableElementLightbox = LightboxModal.querySelectorAll(focusableElementsLightbox)[0];
 
 const rootElement = document.querySelector("html");
@@ -19,7 +19,6 @@ function handleLightbox() {
         element.addEventListener("keydown", (event) => {
             if (event.keyCode === 13) {
                 openLightboxOnEvent(index);
-                firstFocusableElementLightbox.focus();
             }
         });
     });
@@ -35,37 +34,25 @@ function handleLightbox() {
 
     //Previous Lightbox's slide
     const prevSlide = document.querySelector(".lightbox-prev");
-    if (prevSlide) {
-        console.log("existe")
-
-        prevSlide.addEventListener("click", previousMedia);
-        prevSlide.addEventListener("keydown", (event) => {
-            if (event.keyCode === 13) {
-                previousMedia();
-            }
-        });
-    }
-    else if (!prevSlide) {
-        console.log("existe pas ")
-    }
+    prevSlide.addEventListener("click", previousMedia);
+    prevSlide.addEventListener("keydown", (event) => {
+        if (event.keyCode === 13) {
+            previousMedia();
+        }
+    });
 
     //Next Lightbox's slide
     const nextSlide = document.querySelector(".lightbox-next");
-    if (nextSlide) {
-        console.log("existe")
-        nextSlide.addEventListener("click", nextMedia);
-        nextSlide.addEventListener("keydown", (event) => {
+    nextSlide.addEventListener("click", nextMedia);
+    nextSlide.addEventListener("keydown", (event) => {
             if (event.keyCode === 13) {
                 nextMedia();
             }
-        });
-    }
-    else if (!nextSlide) {
-        console.log("existe pas ")
-    }
+    });
 }
 
 function openModal() {
+
     rootElement.classList.add("stop-scroll");
     ScrollToTopBtn.style.display = "none";
     LightboxModal.style.display = "flex";
@@ -110,9 +97,10 @@ function currentSlide(n) {
 }
 
 function showSlides(n) {
+    firstFocusableElementLightbox.focus();
+
     let i;
     let slides = document.querySelectorAll(".lightbox-slides");
-    console.log(slides)
     if (n > slides.length) {
         slideIndex = 1;
     }

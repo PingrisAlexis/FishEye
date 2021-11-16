@@ -185,7 +185,7 @@ body {
 .photographer-pictures-container figcaption {
   display: flex;
   flex-direction: row;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   font-size: 2.2rem;
   color: var(--color-primary);
   justify-content: space-between;
@@ -214,11 +214,15 @@ body {
   background: var(--color-fifth);
   bottom: 0;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   flex-wrap: nowrap;
   font-size: 2rem;
   border-radius: 0.5rem 0.5rem 0 0;
   z-index: 1;
+}
+.photographer-info i {
+  margin-right: 1.5rem;
+  margin-left: 0.5rem;
 }
 
 /*MEDIAS QUERIES*/
@@ -546,7 +550,7 @@ header ul {
 }
 header h1 {
   position: relative;
-  margin-top: 0.5rem;
+  margin-top: 0.8rem;
   color: var(--color-primary);
   font-weight: 500;
 }
