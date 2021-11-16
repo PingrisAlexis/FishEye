@@ -1,14 +1,13 @@
 let allSelectedLikes = [];
 
 function handleLikes() {
-    const likes = document.querySelectorAll(".like-btn");
 
+    const likes = document.querySelectorAll(".like-btn");
     likes.forEach((like) => {
 
         like.addEventListener("click", (like) => {
             likeDislike(like);
         });
-
         like.addEventListener("keydown", (event) => {
             if (event.keyCode === 13) {
 
@@ -44,6 +43,7 @@ function likeDislike (like) {
 }
 
 function likesPerPhotographer() {
+
     const likesPerMedia = document.querySelectorAll(".photographer-pictures-likes-container span");
     const likesPerPhotographer = document.getElementById("photographer-info-total-likes");
     likesPerPhotographer.innerHTML =

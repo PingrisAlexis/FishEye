@@ -1,4 +1,3 @@
-
 class PhotographerCard {
 
 	constructor (photographer) {
@@ -27,7 +26,6 @@ class PhotographerCard {
 
 	getPhotographerPageCard () {
 		return `
-				
         		<article class="photographer-details-card">
         			<div>
         			     <img class="photographer-portrait" src="../../assets/media/photographers-portraits/${this.photographer.portrait}" aria-label="${this.photographer.alt}" alt="${this.photographer.alt}">
@@ -43,7 +41,7 @@ class PhotographerCard {
         				<p class="photographer-city">${this.photographer.city}, ${this.photographer.country}</p>
 						<p class="photographer-tagline">${this.photographer.tagline}</p>
 						<ul>${this.photographer.tags.map(tag =>
-			`<li aria-label="tag ${tag}" class="photographers-filter" data-filter="${tag}">#${tag}
+							`<li aria-label="tag ${tag}" class="photographers-filter" data-filter="${tag}">#${tag}
 								<span class="sr-only">Filtre les artistes selon la catégorie ${tag}</span>
 							</li>`).join(' ')}
 						</ul> 
