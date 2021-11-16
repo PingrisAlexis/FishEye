@@ -1,6 +1,6 @@
-function handleSort(value, medias, mediasPageContainer,lightboxModalContent) {
+function handleSort(value, medias, mediasPageContainer, lightboxMedias) {
     mediasPageContainer.innerHTML = "";
-    lightboxModalContent.innerHTML = "";
+    lightboxMedias.innerHTML = "";
 
     let sortedMedias;
 
@@ -16,7 +16,7 @@ function handleSort(value, medias, mediasPageContainer,lightboxModalContent) {
 
     sortedMedias.forEach((media) => {
         mediasPageContainer.innerHTML += new MediaCard(media).getMediaCard();
-        lightboxModalContent.innerHTML += new MediaCard(media).getMediaLightbox();
+        lightboxMedias.innerHTML += new MediaCard(media).getMediaLightbox();
     })
 }
 

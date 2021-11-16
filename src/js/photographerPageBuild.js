@@ -1,7 +1,7 @@
 const photographersPageCardsContainer = document.querySelector(".photographer-page-header");
 const mediasPageContainer = document.querySelector(".media-cards-container");
 const urlSearch = new URLSearchParams(window.location.search).get("id");
-const lightboxModalContent = document.querySelector(".lightbox-modal-content");
+const lightboxMedias= document.querySelector(".lightbox-medias");
 const sortByContainer = document.querySelector(".order-by-select");
 const contactFormPhotographerName = document.querySelector(".form-title");
 
@@ -12,21 +12,22 @@ fetch("../../fisheye.json")
         let loadMedias = data.media;
         let currentPhotographerMedia = loadMedias.filter((media) => media.photographerId === parseInt(urlSearch));
 
-        //Automatic order medias by likes
+        //Native order medias by likes
         sortBy(currentPhotographerMedia, "likes").forEach((media) => {
+
             mediasPageContainer.innerHTML += new MediaCard(media).getMediaCard();
-            lightboxModalContent.innerHTML += new MediaCard(media).getMediaLightbox();
+            lightboxMedias.innerHTML += new MediaCard(media).getMediaLightbox();
         })
 
         //Event handler on categories select
         sortByContainer.addEventListener("change",(e) => {
-           handleSort(e.target.value, currentPhotographerMedia, mediasPageContainer, lightboxModalContent)
+
+            handleSort(e.target.value, currentPhotographerMedia, mediasPageContainer, lightboxMedias)
             handleLikes();
             handleLightbox();
-
         });
 
-        //hydrate photographer HTML
+        //hydrate photographer in HTML elements
         const currentPhotographer = loadPhotographers.find((photographer) => photographer.id === parseInt(urlSearch));
             if (currentPhotographer) {
                 photographersPageCardsContainer.innerHTML = new PhotographerCard(currentPhotographer).getPhotographerPageCard();
