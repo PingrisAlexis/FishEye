@@ -1,4 +1,5 @@
 function handleSort(value, medias, mediasPageContainer, lightboxMedias) {
+
     mediasPageContainer.innerHTML = "";
     lightboxMedias.innerHTML = "";
 

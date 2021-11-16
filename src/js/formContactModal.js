@@ -19,14 +19,16 @@ const firstFocusableElementFormContact = contactModal.querySelectorAll(focusable
 
 //LAUNCH CONTACT MODAL
 document.addEventListener('click',function launchContactModal(e){
+
     if(e.target && e.target.className === "modal-btn"){
         contactModal.style.display = "block";
         firstFocusableElementFormContact.focus();
     }
 });
 
-//CLOSE CONTACT MODAL
+//CLOSE CONTACT MODAL EVENT
 btnCloseContactModal.forEach((elt) => {
+
     elt.addEventListener("click",() => {
         closeContactModal();
     });
@@ -37,13 +39,16 @@ btnCloseContactModal.forEach((elt) => {
     });
 });
 
-
+//CLOSE CONTACT MODAL AND RESET FORM
 function closeContactModal() {
+
     contactModal.style.display = document.querySelector(".hide");
+    resetForm()
 }
 
 //INVALID INPUT
 function invalidControl(selector, errorMessage) {
+
     selector.textContent = errorMessage;
     selector.style.color = "#901C1C";
 
@@ -52,6 +57,7 @@ function invalidControl(selector, errorMessage) {
 
 //VALID INPUT
 function validControl(selector, message) {
+
     selector.textContent = message;
     selector.style.color = "black";
 
@@ -65,24 +71,16 @@ function controlFirstname() {
     const testFirstname = regexName.test(firstname.value);
 
     if (firstname.value === "") {
-
         return invalidControl(infoFirstname, "Prénom requis");
-
     }
     else if (firstname.value.trim().length < 2) {
-
         return invalidControl(infoFirstname, "Le prénom doit avoir au moins deux caractéres");
-
     }
     else if (testFirstname === false){
-
         return invalidControl(infoFirstname, "Format incorrect");
-
     }
     else {
-
         return validControl(infoFirstname, "Prénom validé");
-
     }
 }
 
@@ -93,24 +91,16 @@ function controlLastname() {
     const testLastname = regexName.test(lastname.value);
 
     if (lastname.value === "") {
-
         return invalidControl(infoLastname, "Nom requis");
-
     }
     else if (lastname.value.trim().length < 2) {
-
         return invalidControl(infoLastname, "Le nom doit avoir au moins deux caractéres");
-
     }
     else if (testLastname === false){
-
         return invalidControl(infoLastname, "Format incorrect");
-
     }
     else {
-
         return validControl(infoLastname, "Nom validé");
-
     }
 }
 
@@ -122,19 +112,13 @@ function controlEmail () {
     const testEmail = regexEmail.test(email.value);
 
     if (email.value === "") {
-
         return invalidControl(infoEmail, "E-mail requis");
-
     }
     else if (testEmail === false){
-
         return invalidControl(infoEmail, "Format incorrect");
-
     }
     else {
-
         return validControl(infoEmail, "E-mail validé");
-
     }
 }
 
@@ -142,29 +126,18 @@ function controlEmail () {
 function controlMessage() {
 
     const message = document.getElementById("user-message");
-    const testMessage = regexName.test(message.value);
 
     if (message.value === "") {
-
         return invalidControl(infoMessage, "Message requis");
-
     }
     else if (message.value.trim().length < 2) {
-
         return invalidControl(infoMessage, "Le message doit avoir au moins deux caractéres");
-
-    }
-    else if (testMessage === false){
-
-        return invalidControl(infoMessage, "Format incorrect");
-
     }
     else {
-
         return validControl(infoMessage, "Message validé");
-
     }
 }
+const infoForm = document.getElementById("info-submit-form");
 
 //SUBMIT FORM
 function validation(event)  {
@@ -186,18 +159,17 @@ function validation(event)  {
         formData.append('email', validEmail);
         formData.append('message', validMessage);
 
-
         for (let [key, value] of formData.entries()) {
             console.log(`${key}: ${value}`);
         }
 
-
         resetForm()
+
     }
 }
 //RESET FORM
 function resetForm() {
-    const infoForm = document.getElementById("info-submit-form");
+
     document.querySelector("form").reset();
 
     infoFirstname.previousElementSibling.style.border = "none";
@@ -212,6 +184,7 @@ function resetForm() {
     infoMessage.previousElementSibling.style.border = "none";
     infoMessage.textContent = "";
 
-    return validControl(infoForm, "Message envoyé!");
+    infoMessage.previousElementSibling.style.border = "none";
+    infoForm.textContent = "";
 }
 

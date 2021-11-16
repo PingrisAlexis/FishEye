@@ -1,4 +1,5 @@
 class ImageMedia {
+
     constructor (media) {
         this.media  = media;
     }
@@ -11,6 +12,7 @@ class ImageMedia {
 }
 
 class VideoMedia {
+
     constructor (media) {
         this.media = media;
     }
@@ -23,6 +25,7 @@ class VideoMedia {
 }
 
 class MediaFactory {
+
     constructor (media) {
         this.media = media
     }

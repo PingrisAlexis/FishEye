@@ -8,6 +8,7 @@ const contactFormPhotographerName = document.querySelector(".form-title");
 fetch("../../fisheye.json")
     .then(resp => resp.json())
     .then(data => {
+
         let loadPhotographers = data.photographers;
         let loadMedias = data.media;
         let currentPhotographerMedia = loadMedias.filter((media) => media.photographerId === parseInt(urlSearch));
@@ -30,6 +31,7 @@ fetch("../../fisheye.json")
         //hydrate photographer in HTML elements
         const currentPhotographer = loadPhotographers.find((photographer) => photographer.id === parseInt(urlSearch));
             if (currentPhotographer) {
+
                 photographersPageCardsContainer.innerHTML = new PhotographerCard(currentPhotographer).getPhotographerPageCard();
                 contactFormPhotographerName.innerHTML += new PhotographerCard(currentPhotographer).getPhotographerName();
             }

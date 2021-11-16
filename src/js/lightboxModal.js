@@ -51,7 +51,7 @@ function handleLightbox() {
     });
 }
 
-function openModal() {
+function openLightbox() {
 
     rootElement.classList.add("stop-scroll");
     ScrollToTopBtn.style.display = "none";
@@ -70,7 +70,7 @@ function closeLightbox() {
 
 function openLightboxOnEvent(index) {
 
-    openModal();
+    openLightbox();
     currentSlide(index +1);
 }
 
@@ -97,6 +97,7 @@ function currentSlide(n) {
 }
 
 function showSlides(n) {
+
     firstFocusableElementLightbox.focus();
 
     let i;
