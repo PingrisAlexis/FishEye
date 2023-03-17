@@ -1,4 +1,4 @@
-# Project 2/9 Front End Developer Path
+# Project 2/9 - Front End Developer Path
 
 ## Create an accessible site for a platform of photographers.
 
