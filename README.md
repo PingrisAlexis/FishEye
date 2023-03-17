@@ -1,6 +1,6 @@
-# PingrisAlexis_06_06102021
+# Project 2/9 Front End Developer Path
 
-## Project 6 Front-End OpenClassrooms - Create an accessible site for a platform of photographers.
+## Create an accessible site for a platform of photographers.
 
 ### Specifications:
 
